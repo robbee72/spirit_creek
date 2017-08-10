@@ -1,0 +1,15 @@
+<h1>New Scorecard</h1>
+
+  <%= form_for @scorecard do |f| %>
+    <table>
+      <tr><%= render 'hole_number_headings' %> </tr>
+      <tr><%= render 'total_score.html.erb'%></tr>
+    </table> 
+        <td class="form-buttons"><%= f.submit(" Create Card") %></td>     
+ <% end %>
+
+ <%= link_to "back to scorecards listing", scorecards_path %>
+
+<%= render 'form', scorecard: @scorecard %>
+
+<%= link_to 'Back', scorecards_path %>
