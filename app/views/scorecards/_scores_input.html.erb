@@ -1,0 +1,25 @@
+        <tr><%= form_for :scorecard, url: scorecards_path do |f| %></tr>
+        <tr>
+          <th><%= f.text_field :player %></th>
+          <td><%= f.number_field :hole_1, :style => "width: 20px;" %></td>
+          <td><%= f.number_field :hole_2, :style => "width: 20px;"  %></td>
+          <td><%= f.number_field :hole_3, :style => "width: 20px;"  %></td>
+          <td><%= f.number_field :hole_4, :style => "width: 20px;"  %></td>
+          <td><%= f.number_field :hole_5, :style => "width: 20px;"  %></td>
+          <td><%= f.number_field :hole_6, :style => "width: 20px;"  %></td>
+          <td><%= f.number_field :hole_7, :style => "width: 20px;"  %></td>
+          <td><%= f.number_field :hole_8, :style => "width: 20px;"  %></td>
+          <td><%= f.number_field :hole_9, :style => "width: 20px;"  %></td>
+          <td><%= f.number_field :hole_10, :style => "width: 20px;"  %></td>
+          <td><%= f.number_field :hole_11, :style => "width: 20px;"  %></td>
+          <td><%= f.number_field :hole_12, :style => "width: 20px;"  %></td>
+          <td><%= f.number_field :hole_13, :style => "width: 20px;"  %></td>
+          <td><%= f.number_field :hole_14, :style => "width: 20px;"  %></td>
+          <td><%= f.number_field :hole_15, :style => "width: 20px;"  %></td>
+          <td><%= f.number_field :hole_16, :style => "width: 20px;"  %></td>
+          <td><%= f.number_field :hole_17, :style => "width: 20px;"  %></td>
+          <td><%= f.number_field :hole_18, :style => "width: 20px;"  %></td>
+          <td><%= render 'total_score' %></td>
+      </tr>
+        <% end %>
+        

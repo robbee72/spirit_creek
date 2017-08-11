@@ -17,6 +17,7 @@ class ScorecardsController < ApplicationController
   end
   # GET /scorecards/1/edit
   def edit
+    @scorecard = Scorecard.find(params[:id])
   end
   # POST /scorecards
   # POST /scorecards.json

@@ -4,6 +4,7 @@ h1 {
 }
 
 th {
+  background-color: #E8A974;
   align-content: center;
   text-align: center;
   column-width: inherit;
@@ -12,6 +13,7 @@ th {
 }
 
 td {
+  background-color: #E8A974;
   height: 20px;
   text-align: center;
   column-width: 3em;
@@ -53,7 +55,7 @@ body {
   width: 250px;
 }
 .jumbotron{
-  background-color:#8b908e;
+  background-color:#95C8E8;
   background-size: cover;
   height: 550px;
 }
