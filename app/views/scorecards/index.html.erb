@@ -1,30 +1,4 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Scorecards</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @scorecards.each do |scorecard| %>
-      <tr>
-        <td><%= link_to 'Show', scorecard %></td>
-        <td><%= link_to 'Edit', edit_scorecard_path(scorecard) %></td>
-        <td><%= link_to 'Destroy', scorecard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Scorecard', new_scorecard_path %>
-
-
 <body>
   <div id="main-container" class="container-fluid">
       <div class="row">
@@ -44,5 +18,5 @@
         </div>
      </div>
       <%= yield %>
- 
+  </div>
 </body>

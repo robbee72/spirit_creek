@@ -1,11 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_scorecard_path(@scorecard) %> |
-<%= link_to 'Back', scorecards_path %>
-
-
-
-
 
 <table>
   <h2> Show Scorecards</h2>
@@ -13,7 +5,7 @@
       <table>
         <td></td><%= render 'hole_number_headings' %>
        <tr>
-          <td><%= @scorecard.player %></td>
+          <th><%= @scorecard.player %></th>
           <td><%= @scorecard.hole_1 %></td>
           <td><%= @scorecard.hole_2 %></td>
           <td><%= @scorecard.hole_3 %></td>

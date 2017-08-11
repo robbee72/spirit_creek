@@ -20,9 +20,15 @@
     <td><%= scorecard.hole_16 %></td>
     <td><%= scorecard.hole_17 %></td>
     <td><%= scorecard.hole_18 %></td>
-
-    <td class="actions"><%= link_to 'Edit', edit_scorecard_path(scorecard) %></td>
-    <td class="actions"><%= link_to 'Show', scorecard_path(scorecard) %></td>
-    <td class="actions"><%= link_to 'Delete', scorecard_path(scorecard), method: :delete, data: {confirm: "Are you sure?"} %></td>
+    <td><%= total_score = [scorecard.hole_1.to_i, scorecard.hole_2.to_i, scorecard.hole_3.to_i, scorecard.hole_4.to_i, scorecard.hole_5.to_i, scorecard.hole_6.to_i, scorecard.hole_7.to_i, scorecard.hole_8.to_i, scorecard.hole_9.to_i, scorecard.hole_10.to_i, scorecard.hole_11.to_i, scorecard.hole_12.to_i, scorecard.hole_13.to_i, scorecard.hole_14.to_i, scorecard.hole_15.to_i, scorecard.hole_16.to_i, scorecard.hole_17.to_i, scorecard.hole_18.to_i].inject(0) {|sum, x| sum + x} %>
+    
+    
+    </td>
+    <a></a><td class="actions"><%= link_to 'Edit', edit_scorecard_path(scorecard) %></td>
+    <a></a><td class="actions"><%= link_to 'Show', scorecard_path(scorecard) %></td>
+    <a></a><td class="actions"><%= link_to 'Delete', scorecard_path(scorecard), method: :delete, data: {confirm: "Are you sure?"} %></td>
   </tr>
+  
   <% end %>
+  
+ 

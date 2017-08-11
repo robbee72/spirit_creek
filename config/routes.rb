@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  resources :scorecards
   
-  root :to => 'public#index'
-
-  get 'show/:permalink', :to => 'public#show', :as => 'public_show'
+  root 'pages#home'
+  get 'about', to: 'pages#about'
 
   resources :users do
      member do

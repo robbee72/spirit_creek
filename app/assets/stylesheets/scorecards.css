@@ -1,8 +1,5 @@
-$navbar-default-bg: white;
-// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-@import "bootstrap-sprockets";
-@import "bootstrap";
 
+ 
 h1 {
   color: #337ab7
 }

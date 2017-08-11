@@ -20,11 +20,5 @@
   <td><%= f.number_field :hole_16 %></td>
   <td><%= f.number_field :hole_17 %></td>
   <td><%= f.number_field :hole_18 %></td>
-
-  <% total_score = [@scorecard.hole_1.to_i, @scorecard.hole_2.to_i, @scorecard.hole_3.to_i, @scorecard.hole_4.to_i, @scorecard.hole_5.to_i, @scorecard.hole_6.to_i, @scorecard.hole_7.to_i, @scorecard.hole_8.to_i, @scorecard.hole_9.to_i, @scorecard.hole_10.to_i, @scorecard.hole_11.to_i, @scorecard.hole_12.to_i, @scorecard.hole_13.to_i, @scorecard.hole_14.to_i, @scorecard.hole_15.to_i, @scorecard.hole_16.to_i, @scorecard.hole_17.to_i, @scorecard.hole_18.to_i] %>
-  <% total_score.each do |hole|
-    puts "#{hole}"
-  end %> 
-  <td><%= total_score.inject(0) {|sum, x| sum + x} %></td>
 <% end %>
 </tr>
