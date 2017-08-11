@@ -1,22 +1,24 @@
-<h1>Scorecards</h1>
-<body>
-  <div id="main-container" class="container-fluid">
-      <div class="row">
-        <div id="main-content" class="col-xs-9">
-          <!--  main content -->
-          <table class="table" summary="Scorecard list">
-               <h2>List of Scorecards</h2>
-                <tr class="header">
-                  <th>Player</th>
-                  <%= render 'hole_number_headings' %>
-                  <%= render 'list_of_scores' %>
-                </tr>  
-          </table>
-          <%= link_to "New Scorecard", new_scorecard_path %>
-          <br />
-          <%= link_to "Home", root_path %>
-        </div>
-     </div>
-      <%= yield %>
-  </div>
-</body>
+<div class="center jumbotron">
+  <h1>Scorecards</h1>
+  <body>
+    <div id="main-container" class="container-fluid">
+        <div class="row">
+          <div id="main-content" class="col-xs-9">
+            <!--  main content -->
+            <table class="table" summary="Scorecard list">
+                 <h2>List of Scorecards</h2>
+                  <tr class="header">
+                    <th>Player</th>
+                    <%= render 'hole_number_headings' %>
+                    <%= render 'list_of_scores' %>
+                  </tr>  
+            </table>
+            <%= link_to "New Scorecard", new_scorecard_path %>
+            <br />
+            <%= link_to "Home", root_path %>
+          </div>
+       </div>
+        <%= yield %>
+    </div>
+  </body>
+</div>

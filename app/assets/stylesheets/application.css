@@ -20,8 +20,10 @@ td {
 }
 
 body {
+  background-image: url(green_view_golfhole.png);
   background-color: #beae99;
 }
+
 
 #logo {
   float: left;
@@ -37,12 +39,21 @@ body {
   text-decoration: none;
 }
 
+.number_field {
+  width: auto;
+}
 .center {
   text-align: center;
 }
-
+.container.small_jumbotron {
+  align-content: center;
+  padding-left: 100px;
+  background-size: contain;
+  height: 250px;
+  width: 250px;
+}
 .jumbotron{
-  background-color:aquamarine;
+  background-color:#8b908e;
   background-size: cover;
   height: 550px;
 }
