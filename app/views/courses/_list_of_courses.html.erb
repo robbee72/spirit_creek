@@ -1,0 +1,60 @@
+<% @courses.each do |course| %>
+    <tr>
+      <th><%= course.name %></th>
+      <td><%= course.par_1 %></td>
+      <td><%= course.par_2 %></td>
+      <td><%= course.par_3 %></td>
+      <td><%= course.par_4 %></td>
+      <td><%= course.par_5 %></td>
+      <td><%= course.par_6 %></td>
+      <td><%= course.par_7 %></td>
+      <td><%= course.par_8 %></td>
+      <td><%= course.par_9 %></td>
+      <td><%= front_par = [course.par_1.to_i, course.par_2.to_i, course.par_3.to_i, course.par_4.to_i, course.par_5.to_i, course.par_6.to_i, course.par_7.to_i, course.par_8.to_i, course.par_9.to_i].inject {|memo, n| memo + n } %> </td>
+      <td><%= course.par_10 %></td>
+      <td><%= course.par_11 %></td>
+      <td><%= course.par_12 %></td>
+      <td><%= course.par_13 %></td>
+      <td><%= course.par_14 %></td>
+      <td><%= course.par_15 %></td>
+      <td><%= course.par_16 %></td>
+      <td><%= course.par_17 %></td>
+      <td><%= course.par_18 %></td>
+      <td><%= back_par = [course.par_10.to_i, course.par_11.to_i, course.par_12.to_i, course.par_13.to_i, course.par_14.to_i, course.par_15.to_i, course.par_16.to_i, course.par_17.to_i, course.par_18.to_i].inject(0) {|sum, x| sum + x} %>
+      <td><% @par_total = [course.par_1.to_i, course.par_2.to_i, course.par_3.to_i, course.par_4.to_i, course.par_5.to_i, course.par_6.to_i, course.par_7.to_i, course.par_8.to_i, course.par_9.to_i, course.par_10.to_i, course.par_11.to_i, course.par_12.to_i, course.par_13.to_i, course.par_14.to_i, course.par_15.to_i, course.par_16.to_i, course.par_17.to_i, course.par_18.to_i].inject(0) {|sum, x| sum + x} %>
+      <%= @par_total %>  
+    </td>
+         <tr>
+      <th></th>
+      <td><%= course.yardage_1 %></td>
+      <td><%= course.yardage_2 %></td>
+      <td><%= course.yardage_3 %></td>
+      <td><%= course.yardage_4 %></td>
+      <td><%= course.yardage_5 %></td>
+      <td><%= course.yardage_6 %></td>
+      <td><%= course.yardage_7 %></td>
+      <td><%= course.yardage_8 %></td>
+      <td><%= course.yardage_9 %></td>
+      <td><%= front_yardage = [course.yardage_1.to_i, course.yardage_2.to_i, course.yardage_3.to_i, course.yardage_4.to_i, course.yardage_5.to_i, course.yardage_6.to_i, course.yardage_7.to_i, course.yardage_8.to_i, course.yardage_9.to_i].inject {|memo, n| memo + n } %> </td>
+      <td><%= course.yardage_10 %></td>
+      <td><%= course.yardage_11 %></td>
+      <td><%= course.yardage_12 %></td>
+      <td><%= course.yardage_13 %></td>
+      <td><%= course.yardage_14 %></td>
+      <td><%= course.yardage_15 %></td>
+      <td><%= course.yardage_16 %></td>
+      <td><%= course.yardage_17 %></td>
+      <td><%= course.yardage_18 %></td>
+      <td><%= back_yardage = [course.yardage_10.to_i, course.yardage_11.to_i, course.yardage_12.to_i, course.yardage_13.to_i, course.yardage_14.to_i, course.yardage_15.to_i, course.yardage_16.to_i, course.yardage_17.to_i, course.yardage_18.to_i].inject(0) {|sum, x| sum + x} %>
+      <td><% @yardage_total = [course.yardage_1.to_i, course.yardage_2.to_i, course.yardage_3.to_i, course.yardage_4.to_i, course.yardage_5.to_i, course.yardage_6.to_i, course.yardage_7.to_i, course.yardage_8.to_i, course.yardage_9.to_i, course.yardage_10.to_i, course.yardage_11.to_i, course.yardage_12.to_i, course.yardage_13.to_i, course.yardage_14.to_i, course.yardage_15.to_i, course.yardage_16.to_i, course.yardage_17.to_i, course.yardage_18.to_i].inject(0) {|sum, x| sum + x} %>
+      <%= @total %>  
+    </td>
+      <a></a>
+      <td class="actions"><%= link_to 'Edit', edit_course_path(course) %></td>
+      <a></a>
+      <td class="actions"><%= link_to 'Show', course_path(course) %></td>
+      <a></a>
+      <td class="actions"><%= link_to 'Delete', course_path(course), method: :delete, data: {confirm: "Are you sure?"} %></td>
+    </tr>
+
+<% end %>

@@ -1,0 +1,6 @@
+<a><%= form_for :course, url: courses_path  do |f| %>
+
+<%= @yardage_total = [@course.yardage_1.to_i, @course.yardage_2.to_i, @course.yardage_3.to_i, @course.yardage_4.to_i, @course.yardage_5.to_i, @course.yardage_6.to_i, @course.yardage_7.to_i, @course.yardage_8.to_i, @course.yardage_9.to_i, @course.yardage_10.to_i, @course.yardage_11.to_i, @course.yardage_12.to_i, @course.yardage_13.to_i, @course.yardage_14.to_i, @course.yardage_15.to_i, @course.yardage_16.to_i, @course.yardage_17.to_i, @course.yardage_18.to_i].inject(0) {|sum, x| sum + x} %>
+<% end %>
+
+</a>

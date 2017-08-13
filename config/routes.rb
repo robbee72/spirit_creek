@@ -15,4 +15,10 @@ Rails.application.routes.draw do
      end
    end
   
+  resources :courses do
+     member do
+      get :delete
+     end
+   end
+  
 end

@@ -1,10 +1,17 @@
+<% if !flash[:notice].blank? %>
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
+<% end %>
+
+
 <div class="center jumbotron">
   <table>
     <h2> Show Scorecards</h2>
     <%= form_for :scorecard do |f| %>
         <table>
           <td>Player</td><%= render 'hole_number_headings' %>
-         <tr>
+          <tr>
             <th><%= @scorecard.player %></th>
             <td><%= @scorecard.hole_1 %></td>
             <td><%= @scorecard.hole_2 %></td>
@@ -24,10 +31,10 @@
             <td><%= @scorecard.hole_16 %></td>
             <td><%= @scorecard.hole_17 %></td>
             <td><%= @scorecard.hole_18 %></td>
-            <th><%= render 'total_score' %></th>
+            <th><%= render 'total' %></th>
           </tr>
-        </table>  
-   <% end %>
+        </table>
+    <% end %>
     <%= link_to 'Edit this scorecard', edit_scorecard_path(@scorecard) %>  |
     <%= link_to 'Back to scorecards listing', scorecards_path %>
   </table>

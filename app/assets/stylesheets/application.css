@@ -2,7 +2,15 @@
 h1 {
   color: #337ab7
 }
-
+.parHole {
+  background-color: #2d8059;
+  align-content: center;
+  text-align: center;
+  column-width: inherit;
+  border-width: 2px;  
+  border-style: inset;
+  
+}
 th {
   background-color: #E8A974;
   align-content: center;
@@ -26,7 +34,19 @@ body {
   background-color: #beae99;
 }
 
+.scorecard th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
 
+.scorecard th .asc {
+  background-image: url(/images/up_arrow.png);
+}
+
+.scorecard th .desc {
+  background-image: url(/images/down_arrow.png);
+}
 #logo {
   float: left;
   font-size: 1.7 em;

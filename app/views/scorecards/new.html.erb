@@ -3,13 +3,15 @@
 
   <%= form_for @scorecard do |f| %>
     <table>
-      <tr><td>Player</td><%= render 'hole_number_headings' %> </tr>
+      <tr><td>Player</td>
+      <%= render 'hole_number_headings' %> </tr>
       <%= render 'scores_input' %>   
 
     </table> 
         <td class="form-buttons"><%= f.submit("Publish Card") %></td>     
- <% end %>
-
- <%= link_to "back to scorecards listing", scorecards_path %>
+<% end %>
+<br />
+<%= link_to "back to Courses listing", courses_path %>  <br />
+<%= link_to "back to scorecards listing", scorecards_path %>
 
 </div>

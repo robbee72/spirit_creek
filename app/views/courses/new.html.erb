@@ -1,0 +1,16 @@
+<div class="center jumbotron">
+  <h1>New Course</h1>
+
+  <%= form_for Course.new do |f| %>
+    <table>
+      <tr><td>Name of Course</td>
+      <%= render 'scorecards/hole_number_headings' %> </tr>
+      <%= render 'pars_input' %>
+    </table> 
+      <td class="form-buttons"><%= f.submit("Publish Numbers") %></td> 
+ <% end %>
+<br />
+<%= link_to "back to Courses listing", courses_path %>  <br />
+<%= link_to "back to scorecards listing", scorecards_path %>
+
+</div>

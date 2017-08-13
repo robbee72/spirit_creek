@@ -1,0 +1,6 @@
+<a><%= form_for :course, url: courses_path  do |f| %>
+
+<%= @par_total = [@course.par_1.to_i, @course.par_2.to_i, @course.par_3.to_i, @course.par_4.to_i, @course.par_5.to_i, @course.par_6.to_i, @course.par_7.to_i, @course.par_8.to_i, @course.par_9.to_i, @course.par_10.to_i, @course.par_11.to_i, @course.par_12.to_i, @course.par_13.to_i, @course.par_14.to_i, @course.par_15.to_i, @course.par_16.to_i, @course.par_17.to_i, @course.par_18.to_i].inject(0) {|sum, x| sum + x} %>
+<% end %>
+
+</a>
