@@ -1,10 +1,3 @@
-<% if !flash[:notice].blank? %>
-    <div class="notice">
-      <%= flash[:notice] %>
-    </div>
-<% end %>
-
-
 <div class="center jumbotron">
   <table>
     <h2> Show Courses</h2>
@@ -34,7 +27,7 @@
             <th><%= render 'par_total' %></th>
           </tr>
           <tr>
-           <td></td>
+            <td><i><%= @course.tees %></i></td>
             <td><%= @course.yardage_1 %></td>
             <td><%= @course.yardage_2 %></td>
             <td><%= @course.yardage_3 %></td>
@@ -57,7 +50,7 @@
           </tr>
         </table>
     <% end %>
-     <%= link_to 'Edit this course', edit_course_path(@course) %>  |
+    <%= link_to 'Edit this course', edit_course_path(@course) %>  |
     <%= link_to 'Back to courses listing', courses_path %>
   </table>
 </div>

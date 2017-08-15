@@ -2,9 +2,12 @@ class ScorecardsController < ApplicationController
  before_action :set_scorecard, only: [:show, :edit, :update, :destroy]
   protect_from_forgery
   skip_before_action :verify_authenticity_token, only: [:destroy]
+  
+  layout 'admin'
+
  
   def index 
-      @scorecards = Scorecard.paginate(:page => params[:page], per_page: 4)
+      @scorecards = Scorecard.paginate(:page => params[:page],  per_page: 4) 
       
   end
   
@@ -53,6 +56,7 @@ class ScorecardsController < ApplicationController
   end
 
    def total
+     @total = Total.find(params[:id])
     @scorecards = Scorecard.all
 #    @total = Total.sort {|b1,b2| b2<=>b1 }
   end 

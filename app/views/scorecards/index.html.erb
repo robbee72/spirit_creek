@@ -1,38 +1,32 @@
-<% if !flash[:notice].blank? %>
-  <div class="notice">
-    <%= flash[:notice] %>
-  </div>
-  <% end %>
-  
- <div class="center jumbotron">
+<div class="center jumbotron">
   <h1>Scorecards</h1>
   <body>
-    <div id="main-container" class="container-fluid">
-        <div class="row">
-          <div id="main-content" class="col-xs-9">
-            <!--  main content -->
-<!--   DOES NOT WITH WILL PAGINATION         <table class=" table table_striped sortable" summary="Scorecard list">-->
-                <table class="table" summary="Scorecard list">
-                 <h2>List of Scorecards</h2>
-                  <tr class="header">
-                    <th>Player</th>
-                    <%= render 'shared/list_heading' %> 
-                  </tr>
-                  <tr>  
-                    <%= render 'par_heading' %>
-                    <%= render 'list_of_scores' %>     
-                  </tr>     
-            </table>
-            <%= will_paginate @scorecard %>
-            <br /><br />
-            <%= link_to "New Scorecard", new_scorecard_path %>
-            <br />
-            <%= link_to "Courses", courses_path %>
-            <br />
-            <%= link_to "Home", root_path %>
-          </div>
-       </div>
-        <%= yield %>
+  <div id="main-container" class="container-fluid">
+    <div class="row">
+      <div id="main-content" class="col-xs-9">
+        <!--  main content -->
+        <!--   DOES NOT WITH WILL PAGINATION         <table class=" table table_striped sortable" summary="Scorecard list">-->
+
+        <table class="table" summary="Scorecard list">
+          <h2>List of Scorecards</h2>
+          <tr class="header">
+            <%= link_to "Add New Scorecard", new_scorecard_path %>
+            <br/>
+            <th>Player</th>
+            <%= render 'shared/list_heading' %>
+          </tr>
+          <tr>
+            <%= render 'list_of_scores' %>
+          </tr>
+        </table>
+        <%= will_paginate @scorecard %>
+        <br/><br/>
+        <%= link_to "Courses", courses_path %>
+        <br/>
+        <%= link_to "Home", root_path %>
+      </div>
     </div>
+    <%= yield %>
+  </div>
   </body>
 </div>

@@ -3,6 +3,8 @@ class CoursesController < ApplicationController
   protect_from_forgery
   skip_before_action :verify_authenticity_token, only: [:destroy]
  
+    layout 'admin'
+  
   def index
     @courses = Course.paginate(:page => params[:page], per_page: 4)
   end
@@ -94,7 +96,8 @@ class CoursesController < ApplicationController
     :yardage_16,
     :yardage_17,
     :yardage_18,
-    :total_yardage)
+    :total_yardage,
+    :tees)
     end
   end
 

@@ -1,4 +1,5 @@
 
+
 h1 {
   color: #337ab7
 }
@@ -8,11 +9,10 @@ h1 {
   text-align: center;
   column-width: inherit;
   border-width: 2px;  
-  border-style: inset;
-  
+  border-style: inset; 
 }
 th {
-  background-color: #E8A974;
+  background-color: #e0d5cc;
   align-content: center;
   text-align: center;
   column-width: inherit;
@@ -21,7 +21,7 @@ th {
 }
 
 td {
-  background-color: #E8A974;
+  background-color: #eae0d8;
   height: 20px;
   text-align: center;
   column-width: 3em;
@@ -44,17 +44,16 @@ body {
   background-image: url(/images/up_arrow.png);
 }
 
-.scorecard th .desc {
-  background-image: url(/images/down_arrow.png);
+.scorecard td {
+  width: 20px;
+  background-color: #eae0d8;
+  height: 20px;
+  text-align: center;
+  column-width: 3em;
+  border-width: 3px;  
+  border-style: inset;
 }
-#logo {
-  float: left;
-  font-size: 1.7 em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1 px;
-  font-weight: bold;
-}
+
 
 #logo:hover {
   color: #fff;
@@ -133,24 +132,4 @@ footer ul li {
 .scorecard-meta-details{
   border-top: 1 px solid #eaeaea;
   margin-top: 15px;
-}
-
-.badge {
-  background-color: #CEF6F5;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  font-weight: bold;
-}
-
-.input_checkbox input {
-  width: auto !important;
-}
-
-.description {
-  margin-top: 0;
-}
-
-.listing {
-  list-style: none;
-  padding-left: 0;
 }

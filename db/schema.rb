@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170812215447) do
+ActiveRecord::Schema.define(version: 20170814155928) do
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20170812215447) do
     t.integer "yardage_17"
     t.integer "yardage_18"
     t.integer "total_yardage"
+    t.string "tees"
   end
 
   create_table "scorecards", force: :cascade do |t|
