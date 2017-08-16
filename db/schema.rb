@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170814155928) do
+ActiveRecord::Schema.define(version: 20170816204545) do
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
@@ -76,6 +76,12 @@ ActiveRecord::Schema.define(version: 20170814155928) do
     t.integer "hole_17"
     t.integer "hole_18"
     t.integer "total"
+  end
+
+  create_table "scorecards_courses", id: false, force: :cascade do |t|
+    t.integer "scorecard_id"
+    t.integer "course_id"
+    t.index ["scorecard_id", "course_id"], name: "index_scorecards_courses_on_scorecard_id_and_course_id"
   end
 
 end

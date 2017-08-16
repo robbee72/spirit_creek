@@ -5,10 +5,9 @@ class ScorecardsController < ApplicationController
   
   layout 'admin'
 
- 
+  
   def index 
-      @scorecards = Scorecard.paginate(:page => params[:page],  per_page: 4) 
-      
+      @scorecards = Scorecard.paginate(:page => params[:page],  per_page: 5) 
   end
   
   def show
@@ -25,7 +24,7 @@ class ScorecardsController < ApplicationController
   end
 
   def create
-    @scorecard = Scorecard.new(scorecard_params)
+    @scorecard = Scorecard.create(scorecard_params)
     respond_to do |format|
       if @scorecard.save
         flash[:notice] = "Scorecard created."
@@ -57,15 +56,18 @@ class ScorecardsController < ApplicationController
 
    def total
      @total = Total.find(params[:id])
-    @scorecards = Scorecard.all
-#    @total = Total.sort {|b1,b2| b2<=>b1 }
-  end 
-
+      @total.save
+#    total = Total.sort {|b1,b2| b2<=>b1 }
+  end
+  
   
   private
   
+   
+  
     def set_scorecard
       @scorecard = Scorecard.find(params[:id])
+  
     end
 
     def scorecard_params

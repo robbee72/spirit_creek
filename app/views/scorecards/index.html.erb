@@ -1,4 +1,8 @@
 <div class="center jumbotron">
+ <head>
+   
+   
+ </head>
   <h1>Scorecards</h1>
   <body>
   <div id="main-container" class="container-fluid">
@@ -11,22 +15,23 @@
           <h2>List of Scorecards</h2>
           <tr class="header">
             <%= link_to "Add New Scorecard", new_scorecard_path %>
-            <br/>
             <th>Player</th>
             <%= render 'shared/list_heading' %>
           </tr>
           <tr>
             <%= render 'list_of_scores' %>
+           
           </tr>
+          <%= will_paginate %>
         </table>
-        <%= will_paginate @scorecard %>
-        <br/><br/>
+        <br/>
         <%= link_to "Courses", courses_path %>
         <br/>
         <%= link_to "Home", root_path %>
       </div>
     </div>
     <%= yield %>
+  
   </div>
   </body>
 </div>

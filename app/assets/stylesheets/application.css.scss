@@ -1,8 +1,7 @@
-
-
 h1 {
   color: #337ab7
 }
+
 .parHole {
   background-color: #2d8059;
   align-content: center;
@@ -11,11 +10,12 @@ h1 {
   border-width: 2px;  
   border-style: inset; 
 }
+
 th {
   background-color: #e0d5cc;
   align-content: center;
   text-align: center;
-  column-width: inherit;
+  column-width: auto;
   border-width: 2px;  
   border-style: inset;
 }
@@ -24,8 +24,8 @@ td {
   background-color: #eae0d8;
   height: 20px;
   text-align: center;
-  column-width: 3em;
-  border-width: 3px;  
+  column-width: 1.5em;
+  border-width: 2px;  
   border-style: inset;
 }
 
@@ -40,32 +40,26 @@ body {
   background-position: right center;
 }
 
-.scorecard th .asc {
-  background-image: url(/images/up_arrow.png);
-}
-
-.scorecard td {
-  width: 20px;
-  background-color: #eae0d8;
-  height: 20px;
-  text-align: center;
-  column-width: 3em;
-  border-width: 3px;  
-  border-style: inset;
-}
-
-
 #logo:hover {
   color: #fff;
   text-decoration: none;
 }
 
-.number_field {
-  width: auto;
+table {
+  margin: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+  
 }
+
+.input {
+  column-width:  20px;
+}
+
 .center {
   text-align: center;
 }
+
 .container.small_jumbotron {
   align-content: center;
   padding-left: 100px;
@@ -73,6 +67,7 @@ body {
   height: 250px;
   width: 250px;
 }
+
 .jumbotron{
   background-color:#95C8E8;
   background-size: cover;
