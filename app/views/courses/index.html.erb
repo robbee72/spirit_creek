@@ -16,10 +16,9 @@
             <%= render 'list_of_courses' %>
           </tr>
         </table>
-        <br/>
-
+        
         <%= will_paginate @course %>
-        <br/><br/>
+    
         <%= link_to "Go to Scorecard", scorecards_path %>
         <br/>
         <%= link_to "Home", root_path %>

@@ -1,7 +1,12 @@
 <% @scorecards.order(:total).each do |scorecard|  %>
 
 <tr>
-  <th><%= scorecard.player %></th>
+  <th>
+    <button type="button" class="btn" data-toggle="modal" data-target="#myModal"> 
+      <%= scorecard.player %>
+    </button>
+      <%= render 'player_profile' %>
+  </th>
   <td><%= scorecard.hole_1 %></td>
   <td><%= scorecard.hole_2 %></td>
   <td><%= scorecard.hole_3 %></td>
@@ -59,15 +64,18 @@
     scorecard.hole_16.to_i, 
     scorecard.hole_17.to_i, 
     scorecard.hole_18.to_i].inject(0) {|sum, x| sum + x} %>
-    
-   
   </td>
-  <a></a>
-  <td class="actions"><%= link_to 'Edit', edit_scorecard_path(scorecard) %></td>
-  <a></a>
-  <td class="actions"><%= link_to 'Show', scorecard_path(scorecard) %></td>
-  <a></a>
-  <td class="actions"><%= link_to 'Delete', scorecard_path(scorecard), method: :delete, data: {confirm: "Are you sure?"} %></td>
+
+  <th class="dropdown">
+    <button class="btn btn-sm" type="button" data-toggle="dropdown">
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li> <%= link_to "Add New Scorecard", new_scorecard_path %></li>
+        <li><%= link_to 'Edit', edit_scorecard_path(scorecard) %></li>
+        <li><%= link_to 'Show', scorecard_path(scorecard) %></li>
+        <li><%= link_to 'Delete', scorecard_path(scorecard), method: :delete, data: {confirm: "Are you sure?"} %></li>
+      </ul>  
+  </th>
 </tr>
 
 <% end %>

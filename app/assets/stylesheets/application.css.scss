@@ -1,130 +1,29 @@
-h1 {
-  color: #337ab7
-}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
 
-.parHole {
-  background-color: #2d8059;
-  align-content: center;
-  text-align: center;
-  column-width: inherit;
-  border-width: 2px;  
-  border-style: inset; 
-}
+/*!
+ * Bootstrap v3.0.0
+ *
+ * Copyright 2013 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world by @mdo and @fat.
+ */
 
-th {
-  background-color: #e0d5cc;
-  align-content: center;
-  text-align: center;
-  column-width: auto;
-  border-width: 2px;  
-  border-style: inset;
-}
-
-td {
-  background-color: #eae0d8;
-  height: 20px;
-  text-align: center;
-  column-width: 1.5em;
-  border-width: 2px;  
-  border-style: inset;
-}
-
-body {
-  background-image: url(green_view_golfhole.png);
-  background-color: #beae99;
-}
-
-.scorecard th .current {
-  padding-right: 12px;
-  background-repeat: no-repeat;
-  background-position: right center;
-}
-
-#logo:hover {
-  color: #fff;
-  text-decoration: none;
-}
-
-table {
-  margin: auto;
-  padding-left: 5px;
-  padding-right: 5px;
-  
-}
-
-.input {
-  column-width:  20px;
-}
-
-.center {
-  text-align: center;
-}
-
-.container.small_jumbotron {
-  align-content: center;
-  padding-left: 100px;
-  background-size: contain;
-  height: 250px;
-  width: 250px;
-}
-
-.jumbotron{
-  background-color:#95C8E8;
-  background-size: cover;
-  height: 550px;
-}
-
-.jumbotron h1 {
-  color: #337ab7;
-  text-align: center;
-  margin-bottom: 30px;
-  letter-spacing: -1px;
-  font-weight: bold;
-}
-
-.btn-xlarge {
-  font-size: 1.7em;
-  background-color: black;
-}
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1 px solid #eaeaea;
-  color: #777;
-}
-
-footer small {
-  float:left;
-}
-
-footer ul {
-  float: left;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 15px;
-}
-
-.scorecard-actions {
-  border-top: 1px solid #eaeaea;
-  padding-top: 5px;
-}
-
-.scorecard-title {
-  font-weight: bold;
-  font-size: 1.5em;
-}
-
-.scorecard-body {
-  border-top: 1px solid #eaeaea;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.scorecard-meta-details{
-  border-top: 1 px solid #eaeaea;
-  margin-top: 15px;
-}
+// Core variables and mixins
+@import "bootstrap/variables";
+@import "bootstrap/mixins";

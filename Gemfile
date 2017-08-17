@@ -8,9 +8,8 @@ end
 
 gem 'rails', '~> 5.1.3'
 gem 'puma', '~> 3.7'
-gem 'bootstrap'
-gem 'bootstrap-sass'
-gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'sass-rails', '~> 5.0', '>= 5.0.4'
 gem 'autoprefixer-rails', '~> 7.1', '>= 7.1.2.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
