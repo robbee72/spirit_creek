@@ -15,14 +15,6 @@ class ScorecardsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create scorecard" do
-    assert_difference('Scorecard.count') do
-      post scorecards_url, params: { scorecard: {  } }
-    end
-
-    assert_redirected_to scorecard_url(Scorecard.last)
-  end
-
   test "should show scorecard" do
     get scorecard_url(@scorecard)
     assert_response :success
@@ -31,11 +23,6 @@ class ScorecardsControllerTest < ActionDispatch::IntegrationTest
   test "should get edit" do
     get edit_scorecard_url(@scorecard)
     assert_response :success
-  end
-
-  test "should update scorecard" do
-    patch scorecard_url(@scorecard), params: { scorecard: {  } }
-    assert_redirected_to scorecard_url(@scorecard)
   end
 
   test "should destroy scorecard" do

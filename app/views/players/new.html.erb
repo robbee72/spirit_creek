@@ -1,0 +1,38 @@
+<div class="center jumbotron">
+  <h4>New Player</h4> 
+    <%= form_for Player.new do |f| %>    
+    <div class="form-group">    
+          <th>
+            <%= f.label :player_name %>
+          </th>
+            <td>
+              <%= f.text_field :player_name, class: "form-control", placeholder: "Enter player name", autofocus: true %>
+            </td>
+            <br />
+          <th>
+            <%= f.label :profile %>
+          </th>
+            <td>
+              <%= f.text_area :profile, class: "form-control", placeholder: "Enter player profile", autofocus: true %>
+            </td>
+            <br />
+            <th>
+              <%= f.label :accomplishments %>
+          </th>
+            <td>
+              <%= f.text_area :accomplishments, class: "form-control", placeholder: "Enter player accomplishments", autofocus: true %>
+            </td>
+          <br />
+          <th>
+            <%= f.label :status %>
+          </th>
+            <td>
+              <%= f.text_area :status, class: "form-control", placeholder: "Tour Status", autofocus: true %>
+          </td>
+      <th class="form-buttons">
+        <%= f.submit("Create Player") %>
+      </th>
+    </div>
+    <% end %>
+    <%= link_to 'Back', players_path %>
+</div>

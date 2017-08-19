@@ -1,0 +1,34 @@
+<div class="center jumbotron">
+ 
+  
+ <h4>Players</h4>
+  <body>
+  <div id="main-container" class="container-fluid">
+    <div class="row"> 
+        <table class="table" >
+          <th>Player</th>
+          <th>Status</th>
+          <th>Profile</th>  
+             <td><%= link_to 'New Player', new_player_path %></td>
+             <tr>
+              <% @players.each do |player| %>
+              <th><%= player.player_name %></th>
+              <th><%= player.status %></th>
+              <th><%= player.profile %></th>
+              <td><%= link_to 'Show', player %></td>
+              <td><%= link_to 'Edit', edit_player_path(player) %></td>
+              <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+          
+          
+         
+        </table>
+    </div>
+    <%= yield %>
+  
+  </div>
+  </body>
+
+  
+</div>

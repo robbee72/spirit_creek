@@ -17,7 +17,7 @@ class CoursesController < ApplicationController
       respond_to do |format|
       if @course.save
         flash[:notice] = "Course created."
-       format.html { redirect_to @course, notice: 'Course was successfully created.' }
+        format.html { redirect_to @course, notice: 'Course was successfully created.' }
         format.json { render :show, status: :created, location: @course }
       else
         format.html { render :new }
@@ -32,10 +32,15 @@ class CoursesController < ApplicationController
             flash[:notice] = "Course created."
             redirect_to course_path(@course)
         else
-            render 'edit' 
+          render 'edit' 
        end
   end
+  
   def destroy
+    @course = Course.find(params[:id])
+    @course.destroy
+    flash[:notice] = "Course was successfully deleted"
+    redirect_to courses_path
   end
   
   def edit

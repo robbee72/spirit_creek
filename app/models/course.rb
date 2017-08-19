@@ -1,5 +1,5 @@
 class Course < ActiveRecord::Base
   
-has_and_belongs_to_many :scorecards
- 
+  has_many :scorecards
+  has_many :players
 end

@@ -2,13 +2,16 @@
   <h1>Update Scorecard</h1>
 
   <%= form_for @scorecard do |f| %>
-      <table>
-        <tr>
-          <td>Player</td><%= render 'hole_number_headings' %></tr>
+    <table>
+      <tr>
+        <td>Player</td>
+        <%= render 'hole_number_headings' %>
+      </tr>
         <%= render 'scores_input' %>
-
-      </table>
-      <td class="form-buttons"><%= f.submit("Save Edit") %></td>
+    </table>
+    <td class="form-buttons">
+      <%= f.submit("Save Edit") %>
+    </td>
   <% end %>
 
   <%= link_to "back to scorecards listing", scorecards_path %>

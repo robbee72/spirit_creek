@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :players
   root 'pages#home'
   get 'about', to: 'pages#about'
 
@@ -16,6 +17,12 @@ Rails.application.routes.draw do
    end
   
   resources :courses do
+     member do
+      get :delete
+     end
+   end
+  
+  resources :players do
      member do
       get :delete
      end

@@ -1,0 +1,30 @@
+<div class="center jumbotron">
+  <body>
+   <div class="container">
+    <h3>Player's Profile</h3>       
+    <div class="panel-group">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#collapse1"> 
+             <%= form_for :player do |f| %>
+            <th><%= @player.player_name %></th>
+            </a>
+          </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+          <ul class="list-group"> 
+            <li><%= @player.profile %></li>
+            <li><%= @player.accomplishments %></li>
+            <li><%= @player.status %></li>
+          </ul>
+          <div class="panel-footer"></div>
+        </div>    
+      </div>
+    </div>
+    <%= link_to 'Edit', edit_player_path(@player) %> |
+    <%= link_to 'Back', players_path %>
+    <% end %> 
+  </div>    
+  </body>
+</div>

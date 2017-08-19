@@ -25,30 +25,25 @@ class ScorecardsController < ApplicationController
 
   def create
     @scorecard = Scorecard.create(scorecard_params)
-    respond_to do |format|
       if @scorecard.save
         flash[:notice] = "Scorecard created."
-       format.html { redirect_to @scorecard, notice: 'Scorecard was successfully created.' }
-        format.json { render :show, status: :created, location: @scorecard }
+        redirect_to scorecards_path(@scorecard)
+        f
       else
-        format.html { render :new }
-        format.json { render json: @scorecard.errors, status: :unprocessable_entity }
-      end
+         render 'new' 
     end
   end
  
- def update
-		@scorecard = Scorecard.find(params[:id])
-		if @scorecard.update(scorecard_params)
-			flash[:notice] = "Scorecard name was successfully updated"
-			redirect_to scorecard_path(@scorecard)
-		else
-			render 'edit'
-		end
-	end
+  def update
+    if @scorecard.update(scorecard_params)
+        flash[:success] = "Scorecard name was successfully updated"
+        redirect_to scorecard_path(@scorecard)
+    else
+        render 'edit'
+    end
+  end
   
   def destroy
-    @scorecard = Scorecard.find(params[:id])
     @scorecard.destroy
     flash[:notice] = "Scorecard was successfully deleted"
     redirect_to scorecards_path
@@ -63,14 +58,12 @@ class ScorecardsController < ApplicationController
   
   private
   
-   
-  
     def set_scorecard
       @scorecard = Scorecard.find(params[:id])
   
     end
 
     def scorecard_params
-      params.require(:scorecard).permit(:id, :player, :hole_1, :hole_2, :hole_3, :hole_4, :hole_5, :hole_6, :hole_7, :hole_8, :hole_9, :hole_10, :hole_11, :hole_12, :hole_13, :hole_14, :hole_15, :hole_16, :hole_17, :hole_18, :total)
+      params.permit(:player, :hole_1, :hole_2, :hole_3, :hole_4, :hole_5, :hole_6, :hole_7, :hole_8, :hole_9, :hole_10, :hole_11, :hole_12, :hole_13, :hole_14, :hole_15, :hole_16, :hole_17, :hole_18, :total, :round_one, :round_two, :round_three, :round_final)
     end
 end

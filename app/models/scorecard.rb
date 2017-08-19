@@ -1,6 +1,7 @@
 class Scorecard < ActiveRecord::Base
-  
+  validates :player, presence: true
   scope :sorted, lambda { order("position ASC")}
   
-  has_and_belongs_to_many :courses
+  has_many :courses
+  has_many :players
 end

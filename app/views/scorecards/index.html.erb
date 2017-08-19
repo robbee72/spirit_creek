@@ -1,5 +1,6 @@
 <div class="center jumbotron">
  <head>
+  
  <h4>List of Scorecards</h4>
  </head>
   <body>
@@ -14,6 +15,7 @@
           <tr>
             <%= render 'list_of_scores' %>
           </tr>
+           <%= link_to "Add New Scorecard", new_scorecard_path %><br/>
           <%= will_paginate %>
         </table>
     </div>
