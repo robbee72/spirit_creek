@@ -1,6 +1,6 @@
 class PlayersController < ApplicationController
   protect_from_forgery
-  skip_before_action :verify_authenticity_token, only: [:destroy]
+#  skip_before_action :verify_authenticity_token, only: [:edit, :new, :destroy]
 
   layout 'admin'
   
@@ -57,6 +57,6 @@ class PlayersController < ApplicationController
     end
 
     def player_params
-      params.permit(:player)
+      params.require(:player).permit(:player_name, :status, :profile, :accomplishments)
     end
 end

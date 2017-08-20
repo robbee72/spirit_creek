@@ -8788,3 +8788,182 @@ Processing by PlayersController#edit as HTML
   Rendered players/edit.html.erb within layouts/admin (2.1ms)
 Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.1ms)
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "players"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "players" ("created_at", "updated_at", "id") VALUES ('2017-08-19 18:01:03.548587', '2017-08-19 18:01:03.548587', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "players" ("created_at", "updated_at", "id") VALUES ('2017-08-19 18:01:03.548587', '2017-08-19 18:01:03.548587', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "scorecards"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "scorecards" ("id") VALUES (980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "scorecards" ("id") VALUES (298486374)[0m
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------
+ScorecardsControllerTest: test_should_destroy_scorecard
+-------------------------------------------------------
+  [1m[36mScorecard Load (0.3ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "scorecards"[0m
+Started DELETE "/scorecards/980190962" for 127.0.0.1 at 2017-08-19 13:01:03 -0500
+Processing by ScorecardsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "scorecards" WHERE "scorecards"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/scorecards
+Completed 302 Found in 10ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "scorecards"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------
+ScorecardsControllerTest: test_should_get_edit
+----------------------------------------------
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/scorecards/980190962/edit" for 127.0.0.1 at 2017-08-19 13:01:03 -0500
+Processing by ScorecardsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering scorecards/edit.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.3ms)
+  Rendered scorecards/_scores_input.html.erb (8.5ms)
+  Rendered scorecards/edit.html.erb within layouts/admin (12.3ms)
+Completed 200 OK in 7847ms (Views: 7844.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+ScorecardsControllerTest: test_should_get_new
+---------------------------------------------
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/scorecards/new" for 127.0.0.1 at 2017-08-19 13:01:11 -0500
+Processing by ScorecardsController#new as HTML
+  Rendering scorecards/new.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.1ms)
+  Rendered scorecards/_scores_input.html.erb (1.1ms)
+  Rendered scorecards/new.html.erb within layouts/admin (2.2ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+ScorecardsControllerTest: test_should_get_index
+-----------------------------------------------
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/scorecards" for 127.0.0.1 at 2017-08-19 13:01:11 -0500
+Processing by ScorecardsController#index as HTML
+  Rendering scorecards/index.html.erb within layouts/admin
+  Rendered shared/_list_heading.html.erb (0.3ms)
+  Rendered scorecards/_par_heading.html.erb (0.2ms)
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" ORDER BY "scorecards"."total" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered scorecards/_list_of_scores.html.erb (2.1ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "scorecards"[0m
+  Rendered scorecards/index.html.erb within layouts/admin (6.0ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+ScorecardsControllerTest: test_should_show_scorecard
+----------------------------------------------------
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/scorecards/980190962" for 127.0.0.1 at 2017-08-19 13:01:11 -0500
+Processing by ScorecardsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mScorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering scorecards/show.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.1ms)
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered scorecards/_total.html.erb (5.5ms)
+  Rendered scorecards/_scores_output.html.erb (7.0ms)
+  Rendered scorecards/show.html.erb within layouts/admin (9.1ms)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+ScorecardTest: test_scorecard_should_be_valid
+---------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+PlayersControllerTest: test_should_destroy_player
+-------------------------------------------------
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "players"[0m
+Started DELETE "/players/980190962" for 127.0.0.1 at 2017-08-19 13:01:11 -0500
+Processing by PlayersController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "players" WHERE "players"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/players
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "players"[0m
+  [1m[35m (2.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+PlayersControllerTest: test_should_get_index
+--------------------------------------------
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/players" for 127.0.0.1 at 2017-08-19 13:01:11 -0500
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/admin
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/admin (1.9ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------
+PlayersControllerTest: test_should_show_player
+----------------------------------------------
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/players/980190962" for 127.0.0.1 at 2017-08-19 13:01:11 -0500
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering players/show.html.erb within layouts/admin
+  Rendered players/show.html.erb within layouts/admin (1.0ms)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+PlayersControllerTest: test_should_get_edit
+-------------------------------------------
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/players/980190962/edit" for 127.0.0.1 at 2017-08-19 13:01:11 -0500
+Processing by PlayersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPlayer Load (0.0ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering players/edit.html.erb within layouts/admin
+  Rendered players/edit.html.erb within layouts/admin (4.3ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+PlayersControllerTest: test_should_update_player
+------------------------------------------------
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/players/980190962" for 127.0.0.1 at 2017-08-19 13:01:11 -0500
+Processing by PlayersController#update as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/players/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+PlayersControllerTest: test_should_get_new
+------------------------------------------
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/players/new" for 127.0.0.1 at 2017-08-19 13:01:11 -0500
+Processing by PlayersController#new as HTML
+  Rendering players/new.html.erb within layouts/admin
+  Rendered players/new.html.erb within layouts/admin (1.8ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m

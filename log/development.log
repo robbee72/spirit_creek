@@ -62231,3 +62231,1619 @@ Processing by ScorecardsController#index as HTML
 Completed 200 OK in 57ms (Views: 53.9ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/courses" for 127.0.0.1 at 2017-08-19 12:56:40 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/admin
+  Rendered shared/_list_heading.html.erb (0.3ms)
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  Rendered courses/_list_of_courses.html.erb (37.5ms)
+  Rendered courses/index.html.erb within layouts/admin (41.1ms)
+Completed 200 OK in 365ms (Views: 352.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/courses/1/edit" for 127.0.0.1 at 2017-08-19 12:56:44 -0500
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/edit.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.3ms)
+  Rendered courses/_pars_input.html.erb (6.2ms)
+  Rendered courses/_yardage_input.html.erb (2.1ms)
+  Rendered courses/edit.html.erb within layouts/admin (13.3ms)
+Completed 200 OK in 57ms (Views: 49.7ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/courses/1" for 127.0.0.1 at 2017-08-19 12:56:51 -0500
+Processing by CoursesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nA3RkdIS57LJkowag+t8Gh8wwL8wKZaLniD0bcehryBETe9n4+RQRTYjKeOlgwnozDDKFp65cYZ2s/+gU/+xmA==", "course"=>{"name"=>"Hackers Valley Golf Club", "par_1"=>"4", "par_2"=>"4", "par_3"=>"3", "par_4"=>"4", "par_5"=>"5", "par_6"=>"4", "par_7"=>"3", "par_8"=>"4", "par_9"=>"5", "par_10"=>"4", "par_11"=>"4", "par_12"=>"4", "par_13"=>"4", "par_14"=>"5", "par_15"=>"3", "par_16"=>"5", "par_17"=>"3", "par_18"=>"4", "tees"=>"Championship Tees", "yardage_1"=>"467", "yardage_2"=>"490", "yardage_3"=>"167", "yardage_4"=>"510", "yardage_5"=>"639", "yardage_6"=>"367", "yardage_7"=>"248", "yardage_8"=>"440", "yardage_9"=>"530", "yardage_10"=>"441", "yardage_11"=>"390", "yardage_12"=>"324", "yardage_13"=>"420", "yardage_14"=>"540", "yardage_15"=>"187", "yardage_16"=>"525", "yardage_17"=>"218", "yardage_18"=>"475"}, "commit"=>"Save Edit", "id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "courses" SET "name" = ? WHERE "courses"."id" = ?[0m  [["name", "Hackers Valley Golf Club"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1
+Completed 302 Found in 7ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2017-08-19 12:56:51 -0500
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.3ms)
+  Rendered courses/_par_total.html.erb (0.6ms)
+  Rendered courses/_yardage_total.html.erb (0.6ms)
+  Rendered courses/_par_yard_output.html.erb (5.5ms)
+  Rendered courses/show.html.erb within layouts/admin (7.9ms)
+Completed 200 OK in 52ms (Views: 50.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/courses/assets/custom.css" for 127.0.0.1 at 2017-08-19 12:56:51 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/courses/assets/custom.css"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/scorecards" for 127.0.0.1 at 2017-08-19 12:57:01 -0500
+Processing by ScorecardsController#index as HTML
+  Rendering scorecards/index.html.erb within layouts/admin
+  Rendered shared/_list_heading.html.erb (0.4ms)
+  Rendered scorecards/_par_heading.html.erb (0.2ms)
+  [1m[36mScorecard Load (0.4ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" ORDER BY "scorecards"."total" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered scorecards/_list_of_scores.html.erb (32.4ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "scorecards"[0m
+  Rendered scorecards/index.html.erb within layouts/admin (42.6ms)
+Completed 200 OK in 91ms (Views: 85.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/scorecards/1/edit" for 127.0.0.1 at 2017-08-19 12:57:07 -0500
+Processing by ScorecardsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering scorecards/edit.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.3ms)
+  Rendered scorecards/_scores_input.html.erb (3.2ms)
+  Rendered scorecards/edit.html.erb within layouts/admin (7.2ms)
+Completed 200 OK in 50ms (Views: 46.4ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/scorecards/1" for 127.0.0.1 at 2017-08-19 12:57:11 -0500
+Processing by ScorecardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+NdGnKmXCh6lc5liNx4l0Tc46IGE4ClQbFcKWmQk/TijR7HKsqDFADnHktr2f9DZMjXh55klYNyvRZVhASSSMg==", "scorecard"=>{"player"=>"Tiger Woods", "round_one"=>"", "hole_1"=>"4", "hole_2"=>"4", "hole_3"=>"4", "hole_4"=>"3", "hole_5"=>"4", "hole_6"=>"3", "hole_7"=>"4", "hole_8"=>"4", "hole_9"=>"3", "hole_10"=>"4", "hole_11"=>"4", "hole_12"=>"2", "hole_13"=>"4", "hole_14"=>"3", "hole_15"=>"4", "hole_16"=>"4", "hole_17"=>"3", "hole_18"=>"4"}, "commit"=>"Save Edit", "id"=>"1"}
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Can't verify CSRF token authenticity.
+Unpermitted parameters: :utf8, :_method, :authenticity_token, :scorecard, :commit, :id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/scorecards/1
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/scorecards/1" for 127.0.0.1 at 2017-08-19 12:57:11 -0500
+Processing by ScorecardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering scorecards/show.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.4ms)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendered scorecards/_total.html.erb (1.4ms)
+  Rendered scorecards/_scores_output.html.erb (4.5ms)
+  Rendered scorecards/show.html.erb within layouts/admin (7.0ms)
+Completed 200 OK in 53ms (Views: 50.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/scorecards/assets/custom.css" for 127.0.0.1 at 2017-08-19 12:57:11 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/scorecards/assets/custom.css"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/scorecards/1/edit" for 127.0.0.1 at 2017-08-19 12:57:25 -0500
+Processing by ScorecardsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering scorecards/edit.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.4ms)
+  Rendered scorecards/_scores_input.html.erb (7.8ms)
+  Rendered scorecards/edit.html.erb within layouts/admin (11.7ms)
+Completed 200 OK in 60ms (Views: 57.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/scorecards/1/edit" for 127.0.0.1 at 2017-08-19 12:58:03 -0500
+Processing by ScorecardsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering scorecards/edit.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.3ms)
+  Rendered scorecards/_scores_input.html.erb (1.8ms)
+  Rendered scorecards/edit.html.erb within layouts/admin (4.9ms)
+Completed 200 OK in 51ms (Views: 48.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/scorecards/1/assets/custom.css" for 127.0.0.1 at 2017-08-19 12:58:03 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/scorecards/1/assets/custom.css"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PATCH "/scorecards/1" for 127.0.0.1 at 2017-08-19 12:58:12 -0500
+Processing by ScorecardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AdFJ6gOXghAZhENI2yW8xTJcUQzao1dfJRwu5roH/40/icERfrMbeXqvnBkIIcAV/03iA6y2IVR5NTDQvh3Kdw==", "scorecard"=>{"player"=>"Tiger Woods", "hole_1"=>"4", "hole_2"=>"4", "hole_3"=>"4", "hole_4"=>"3", "hole_5"=>"4", "hole_6"=>"3", "hole_7"=>"4", "hole_8"=>"4", "hole_9"=>"3", "hole_10"=>"4", "hole_11"=>"4", "hole_12"=>"2", "hole_13"=>"4", "hole_14"=>"3", "hole_15"=>"4", "hole_16"=>"4", "hole_17"=>"3", "hole_18"=>"4"}, "commit"=>"Save Edit", "id"=>"1"}
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :_method, :authenticity_token, :scorecard, :commit, :id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/scorecards/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/scorecards/1" for 127.0.0.1 at 2017-08-19 12:58:12 -0500
+Processing by ScorecardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering scorecards/show.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.3ms)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendered scorecards/_total.html.erb (1.5ms)
+  Rendered scorecards/_scores_output.html.erb (4.4ms)
+  Rendered scorecards/show.html.erb within layouts/admin (6.4ms)
+Completed 200 OK in 56ms (Views: 53.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/scorecards/assets/custom.css" for 127.0.0.1 at 2017-08-19 12:58:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/scorecards/assets/custom.css"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/scorecards/1" for 127.0.0.1 at 2017-08-19 13:00:36 -0500
+Processing by ScorecardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering scorecards/show.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendered scorecards/_total.html.erb (1.7ms)
+  Rendered scorecards/_scores_output.html.erb (4.7ms)
+  Rendered scorecards/show.html.erb within layouts/admin (6.4ms)
+Completed 200 OK in 2745ms (Views: 2743.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/scorecards/assets/stylesheets/custom.css" for 127.0.0.1 at 2017-08-19 13:00:38 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/scorecards/assets/stylesheets/custom.css"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/about" for 127.0.0.1 at 2017-08-19 13:01:41 -0500
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/admin
+  Rendered pages/_mission_statement.html.erb (0.2ms)
+  Rendered pages/about.html.erb within layouts/admin (1.6ms)
+Completed 200 OK in 59ms (Views: 56.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2017-08-19 13:01:43 -0500
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/admin
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/admin (8.4ms)
+Completed 200 OK in 65ms (Views: 58.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/players/new" for 127.0.0.1 at 2017-08-19 13:01:46 -0500
+Processing by PlayersController#new as HTML
+  Rendering players/new.html.erb within layouts/admin
+  Rendered players/new.html.erb within layouts/admin (5.8ms)
+Completed 200 OK in 67ms (Views: 65.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/players" for 127.0.0.1 at 2017-08-19 13:01:56 -0500
+Processing by PlayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eL4kfiIJc8M47++4keW98r6/M5x2MB8/xddTwkV8KRIlFPjhek6X54sw1vWTliHNTYGCbIgeDCEQwwYRi5CI/g==", "player"=>{"player_name"=>"Jordan Spieth", "profile"=>"fhwfhih", "accomplishments"=>"hihihihihih", "status"=>"hihiohihioh"}, "commit"=>"Create Player"}
+Unpermitted parameters: :utf8, :authenticity_token, :player, :commit
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "players" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-19 18:01:56.762385"], ["updated_at", "2017-08-19 18:01:56.762385"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/players
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2017-08-19 13:01:56 -0500
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/admin
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/admin (2.7ms)
+Completed 200 OK in 69ms (Views: 67.3ms | ActiveRecord: 0.2ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/custom.css"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/players/8/edit" for 127.0.0.1 at 2017-08-19 13:02:02 -0500
+Processing by PlayersController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering players/edit.html.erb within layouts/admin
+  Rendered players/edit.html.erb within layouts/admin (2.4ms)
+Completed 200 OK in 46ms (Views: 43.0ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/players/8" for 127.0.0.1 at 2017-08-19 13:02:04 -0500
+Processing by PlayersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1wFm3V6RFhW4du85ymYHSzrYnMIPsq9H1qD5lCpiFywExzwJorRkah6071we0FKiFE2uyus7cFKK4Gq2LQ513w==", "player"=>{"player_name"=>"", "profile"=>"", "accomplishments"=>"", "status"=>""}, "commit"=>"Update Player", "id"=>"8"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :_method, :authenticity_token, :player, :commit, :id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/players/8
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/players/8" for 127.0.0.1 at 2017-08-19 13:02:04 -0500
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering players/show.html.erb within layouts/admin
+  Rendered players/show.html.erb within layouts/admin (1.3ms)
+Completed 200 OK in 48ms (Views: 45.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/players/assets/stylesheets/custom.css" for 127.0.0.1 at 2017-08-19 13:02:04 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/players/assets/stylesheets/custom.css"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/players" for 127.0.0.1 at 2017-08-19 13:02:06 -0500
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/admin
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/admin (3.1ms)
+Completed 200 OK in 48ms (Views: 45.8ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/players/8" for 127.0.0.1 at 2017-08-19 13:02:17 -0500
+Processing by PlayersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OQXe3by9UUoiugpoGj6eDW5ymhKpsgZ8WTlq+PLa6e4HXVYmwZnII0GR1TnJOuLdo2MpHd+ncHcFEHTO9sDcFA==", "id"=>"8"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "players" WHERE "players"."id" = ?[0m  [["id", 8]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/players
+Completed 302 Found in 5ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2017-08-19 13:02:17 -0500
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/admin
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/admin (1.8ms)
+Completed 200 OK in 45ms (Views: 43.5ms | ActiveRecord: 0.1ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/custom.css"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/players/2" for 127.0.0.1 at 2017-08-19 13:04:13 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering players/show.html.erb within layouts/admin
+  Rendered players/show.html.erb within layouts/admin (2.2ms)
+Completed 200 OK in 396ms (Views: 369.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2017-08-19 13:04:22 -0500
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/admin
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/admin (3.7ms)
+Completed 200 OK in 50ms (Views: 47.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/scorecards" for 127.0.0.1 at 2017-08-19 13:04:27 -0500
+Processing by ScorecardsController#index as HTML
+  Rendering scorecards/index.html.erb within layouts/admin
+  Rendered shared/_list_heading.html.erb (0.4ms)
+  Rendered scorecards/_par_heading.html.erb (0.3ms)
+  [1m[36mScorecard Load (0.3ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" ORDER BY "scorecards"."total" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered scorecards/_list_of_scores.html.erb (21.9ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "scorecards"[0m
+  Rendered scorecards/index.html.erb within layouts/admin (31.4ms)
+Completed 200 OK in 74ms (Views: 68.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/scorecards/1" for 127.0.0.1 at 2017-08-19 13:04:34 -0500
+Processing by ScorecardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScorecard Load (0.3ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering scorecards/show.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendered scorecards/_total.html.erb (2.3ms)
+  Rendered scorecards/_scores_output.html.erb (6.0ms)
+  Rendered scorecards/show.html.erb within layouts/admin (8.0ms)
+Completed 200 OK in 51ms (Views: 47.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/scorecards/1/edit" for 127.0.0.1 at 2017-08-19 13:04:37 -0500
+Processing by ScorecardsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering scorecards/edit.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.4ms)
+  Rendered scorecards/_scores_input.html.erb (5.8ms)
+  Rendered scorecards/edit.html.erb within layouts/admin (9.9ms)
+Completed 200 OK in 60ms (Views: 57.1ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/scorecards/1" for 127.0.0.1 at 2017-08-19 13:04:43 -0500
+Processing by ScorecardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5X6hhqhO0Nd1YJMTXdO2+NOL6qjWBrO5/SRNC4+Rw+i+7lbQs3kfyenUmKucskPw1objzsvD+jU+NtIw6pGs4g==", "scorecard"=>{"player"=>"Tiger Woods", "hole_1"=>"5", "hole_2"=>"4", "hole_3"=>"4", "hole_4"=>"3", "hole_5"=>"4", "hole_6"=>"3", "hole_7"=>"4", "hole_8"=>"4", "hole_9"=>"3", "hole_10"=>"4", "hole_11"=>"4", "hole_12"=>"2", "hole_13"=>"4", "hole_14"=>"3", "hole_15"=>"4", "hole_16"=>"4", "hole_17"=>"3", "hole_18"=>"4"}, "commit"=>"Save Edit", "id"=>"1"}
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Can't verify CSRF token authenticity.
+Unpermitted parameters: :utf8, :_method, :authenticity_token, :scorecard, :commit, :id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/scorecards/1
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/scorecards/1" for 127.0.0.1 at 2017-08-19 13:04:43 -0500
+Processing by ScorecardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering scorecards/show.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.3ms)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendered scorecards/_total.html.erb (1.5ms)
+  Rendered scorecards/_scores_output.html.erb (4.2ms)
+  Rendered scorecards/show.html.erb within layouts/admin (6.2ms)
+Completed 200 OK in 51ms (Views: 49.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/scorecards/assets/stylesheets/custom.css" for 127.0.0.1 at 2017-08-19 13:04:43 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/scorecards/assets/stylesheets/custom.css"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/scorecards/1" for 127.0.0.1 at 2017-08-19 13:07:25 -0500
+Processing by ScorecardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering scorecards/show.html.erb within layouts/application
+  Rendered scorecards/_hole_number_headings.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendered scorecards/_total.html.erb (1.9ms)
+  Rendered scorecards/_scores_output.html.erb (4.7ms)
+  Rendered scorecards/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 77ms (Views: 52.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/scorecards/custom.css" for 127.0.0.1 at 2017-08-19 13:07:25 -0500
+Processing by ScorecardsController#show as CSS
+  Parameters: {"id"=>"custom"}
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Scorecard with 'id'=custom):
+  
+app/controllers/scorecards_controller.rb:62:in `set_scorecard'
+Started GET "/scorecards" for 127.0.0.1 at 2017-08-19 13:07:27 -0500
+Processing by ScorecardsController#index as HTML
+  Rendering scorecards/index.html.erb within layouts/application
+  Rendered shared/_list_heading.html.erb (0.5ms)
+  Rendered scorecards/_par_heading.html.erb (0.2ms)
+  [1m[36mScorecard Load (0.3ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" ORDER BY "scorecards"."total" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered scorecards/_list_of_scores.html.erb (3.8ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "scorecards"[0m
+  Rendered scorecards/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 59ms (Views: 56.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/scorecards" for 127.0.0.1 at 2017-08-19 13:07:28 -0500
+Processing by ScorecardsController#index as HTML
+  Rendering scorecards/index.html.erb within layouts/application
+  Rendered shared/_list_heading.html.erb (0.4ms)
+  Rendered scorecards/_par_heading.html.erb (0.2ms)
+  [1m[36mScorecard Load (0.3ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" ORDER BY "scorecards"."total" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered scorecards/_list_of_scores.html.erb (3.4ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "scorecards"[0m
+  Rendered scorecards/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 54ms (Views: 51.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-19 13:07:28 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 52ms (Views: 50.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-08-19 13:07:29 -0500
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  Rendered shared/_list_heading.html.erb (0.4ms)
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  Rendered courses/_list_of_courses.html.erb (30.0ms)
+  Rendered courses/index.html.erb within layouts/application (33.2ms)
+Completed 200 OK in 79ms (Views: 72.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-08-19 13:07:31 -0500
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/_mission_statement.html.erb (0.4ms)
+  Rendered pages/about.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 45ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2017-08-19 13:07:31 -0500
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/application
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 70ms (Views: 63.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2017-08-19 13:09:58 -0500
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/admin
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/admin (8.7ms)
+Completed 200 OK in 56ms (Views: 50.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-19 13:10:00 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/admin
+  Rendered pages/home.html.erb within layouts/admin (0.3ms)
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/scorecards" for 127.0.0.1 at 2017-08-19 13:10:02 -0500
+Processing by ScorecardsController#index as HTML
+  Rendering scorecards/index.html.erb within layouts/admin
+  Rendered shared/_list_heading.html.erb (0.4ms)
+  Rendered scorecards/_par_heading.html.erb (0.2ms)
+  [1m[36mScorecard Load (0.3ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" ORDER BY "scorecards"."total" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered scorecards/_list_of_scores.html.erb (29.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "scorecards"[0m
+  Rendered scorecards/index.html.erb within layouts/admin (35.0ms)
+Completed 200 OK in 86ms (Views: 80.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/scorecards?page=2" for 127.0.0.1 at 2017-08-19 13:10:07 -0500
+Processing by ScorecardsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering scorecards/index.html.erb within layouts/admin
+  Rendered shared/_list_heading.html.erb (0.5ms)
+  Rendered scorecards/_par_heading.html.erb (0.3ms)
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" ORDER BY "scorecards"."total" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 5]]
+  Rendered scorecards/_list_of_scores.html.erb (3.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "scorecards"[0m
+  Rendered scorecards/index.html.erb within layouts/admin (9.2ms)
+Completed 200 OK in 52ms (Views: 49.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/scorecards/12" for 127.0.0.1 at 2017-08-19 13:10:12 -0500
+Processing by ScorecardsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Scorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering scorecards/show.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendered scorecards/_total.html.erb (2.0ms)
+  Rendered scorecards/_scores_output.html.erb (4.9ms)
+  Rendered scorecards/show.html.erb within layouts/admin (7.0ms)
+Completed 200 OK in 57ms (Views: 53.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/scorecards/12/edit" for 127.0.0.1 at 2017-08-19 13:10:14 -0500
+Processing by ScorecardsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering scorecards/edit.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.4ms)
+  Rendered scorecards/_scores_input.html.erb (2.2ms)
+  Rendered scorecards/edit.html.erb within layouts/admin (6.1ms)
+Completed 200 OK in 63ms (Views: 59.6ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/scorecards/12" for 127.0.0.1 at 2017-08-19 13:10:21 -0500
+Processing by ScorecardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w60xKSytAGNlFIOkyIvIJQhpWR5oyfIyWL3KV0zp8PqYPcZ/N5rPffmgiBwJ6j0tDWRQeHUMu76br1VsKemf8A==", "scorecard"=>{"player"=>"Hideki Matsuyama", "hole_1"=>"4", "hole_2"=>"4", "hole_3"=>"4", "hole_4"=>"3", "hole_5"=>"4", "hole_6"=>"4", "hole_7"=>"3", "hole_8"=>"3", "hole_9"=>"5", "hole_10"=>"3", "hole_11"=>"4", "hole_12"=>"4", "hole_13"=>"5", "hole_14"=>"4", "hole_15"=>"4", "hole_16"=>"4", "hole_17"=>"3", "hole_18"=>"4"}, "commit"=>"Save Edit", "id"=>"12"}
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+Can't verify CSRF token authenticity.
+Unpermitted parameters: :utf8, :_method, :authenticity_token, :scorecard, :commit, :id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/scorecards/12
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/scorecards/12" for 127.0.0.1 at 2017-08-19 13:10:21 -0500
+Processing by ScorecardsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering scorecards/show.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.4ms)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendered scorecards/_total.html.erb (1.6ms)
+  Rendered scorecards/_scores_output.html.erb (5.0ms)
+  Rendered scorecards/show.html.erb within layouts/admin (7.4ms)
+Completed 200 OK in 51ms (Views: 49.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/scorecards" for 127.0.0.1 at 2017-08-19 13:12:04 -0500
+Processing by ScorecardsController#index as HTML
+  Rendering scorecards/index.html.erb within layouts/admin
+  Rendered shared/_list_heading.html.erb (0.4ms)
+  Rendered scorecards/_par_heading.html.erb (0.3ms)
+  [1m[36mScorecard Load (0.3ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" ORDER BY "scorecards"."total" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered scorecards/_list_of_scores.html.erb (3.4ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "scorecards"[0m
+  Rendered scorecards/index.html.erb within layouts/admin (8.9ms)
+Completed 200 OK in 55ms (Views: 52.6ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/scorecards/10" for 127.0.0.1 at 2017-08-19 13:12:17 -0500
+Processing by ScorecardsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fZWQs1vGjy662BacwaKJNbyUh64sQgF70W18ZwuN8PFDzRhIJuIWR9nzyc0SpvXlcYU0oVpXd3CNRGJRD5fFCw==", "id"=>"10"}
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "scorecards" WHERE "scorecards"."id" = ?[0m  [["id", 10]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/scorecards
+Completed 302 Found in 6ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/scorecards" for 127.0.0.1 at 2017-08-19 13:12:17 -0500
+Processing by ScorecardsController#index as HTML
+  Rendering scorecards/index.html.erb within layouts/admin
+  Rendered shared/_list_heading.html.erb (0.4ms)
+  Rendered scorecards/_par_heading.html.erb (0.2ms)
+  [1m[36mScorecard Load (0.4ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" ORDER BY "scorecards"."total" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered scorecards/_list_of_scores.html.erb (4.0ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "scorecards"[0m
+  Rendered scorecards/index.html.erb within layouts/admin (9.9ms)
+Completed 200 OK in 58ms (Views: 56.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/scorecards/1/edit" for 127.0.0.1 at 2017-08-19 17:59:44 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ScorecardsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScorecard Load (0.4ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering scorecards/edit.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.5ms)
+  Rendered scorecards/_scores_input.html.erb (8.3ms)
+  Rendered scorecards/edit.html.erb within layouts/admin (14.5ms)
+Completed 200 OK in 396ms (Views: 354.9ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/scorecards/1" for 127.0.0.1 at 2017-08-19 17:59:49 -0500
+Processing by ScorecardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qXqJdfORY7F0p8tobpnGzpnm7J48yTm6ObH3jGnKLI3y6n4j6Kasr+gTwNCv+DPGnOvl+CEMcDb6o2i3DMpDhw==", "scorecard"=>{"player"=>"Tiger Woods", "hole_1"=>"4", "hole_2"=>"4", "hole_3"=>"4", "hole_4"=>"3", "hole_5"=>"4", "hole_6"=>"3", "hole_7"=>"4", "hole_8"=>"4", "hole_9"=>"3", "hole_10"=>"4", "hole_11"=>"4", "hole_12"=>"2", "hole_13"=>"4", "hole_14"=>"3", "hole_15"=>"4", "hole_16"=>"4", "hole_17"=>"3", "hole_18"=>"4"}, "commit"=>"Save Edit", "id"=>"1"}
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Can't verify CSRF token authenticity.
+Unpermitted parameters: :utf8, :_method, :authenticity_token, :scorecard, :commit, :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/scorecards/1
+Completed 302 Found in 7ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/scorecards/1" for 127.0.0.1 at 2017-08-19 17:59:49 -0500
+Processing by ScorecardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering scorecards/show.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.3ms)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendered scorecards/_total.html.erb (1.5ms)
+  Rendered scorecards/_scores_output.html.erb (4.6ms)
+  Rendered scorecards/show.html.erb within layouts/admin (7.2ms)
+Completed 200 OK in 48ms (Views: 45.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/scorecards/1/edit" for 127.0.0.1 at 2017-08-19 18:01:14 -0500
+Processing by ScorecardsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Started GET "/scorecards/1/edit" for 127.0.0.1 at 2017-08-19 18:01:24 -0500
+Started GET "/scorecards" for 127.0.0.1 at 2017-08-19 18:01:24 -0500
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering scorecards/edit.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.3ms)
+  Rendered scorecards/_scores_input.html.erb (1.8ms)
+  Rendered scorecards/edit.html.erb within layouts/admin (5.3ms)
+Completed 200 OK in 74ms (Views: 47.1ms | ActiveRecord: 1.0ms)
+
+
+Processing by ScorecardsController#index as HTML
+Processing by ScorecardsController#edit as HTML
+Started GET "/scorecards/1/edit" for 127.0.0.1 at 2017-08-19 18:01:24 -0500
+Started GET "/scorecards/1/edit" for 127.0.0.1 at 2017-08-19 18:01:24 -0500
+  Parameters: {"id"=>"1"}
+Processing by ScorecardsController#edit as HTML
+Processing by ScorecardsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering scorecards/edit.html.erb within layouts/admin
+Started GET "/scorecards" for 127.0.0.1 at 2017-08-19 18:01:24 -0500
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering scorecards/index.html.erb within layouts/admin
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered scorecards/_hole_number_headings.html.erb (0.7ms)
+Processing by ScorecardsController#index as HTML
+  Rendered shared/_list_heading.html.erb (0.4ms)
+  Rendered scorecards/_scores_input.html.erb (1.9ms)
+  Rendering scorecards/edit.html.erb within layouts/admin
+  Rendering scorecards/edit.html.erb within layouts/admin
+  Rendering scorecards/index.html.erb within layouts/admin
+  Rendered scorecards/edit.html.erb within layouts/admin (21.8ms)
+  Rendered scorecards/_par_heading.html.erb (0.4ms)
+  Rendered scorecards/_hole_number_headings.html.erb (0.3ms)
+  Rendered scorecards/_hole_number_headings.html.erb (0.1ms)
+  Rendered shared/_list_heading.html.erb (0.1ms)
+  Rendered scorecards/_scores_input.html.erb (1.8ms)
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" ORDER BY "scorecards"."total" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered scorecards/_scores_input.html.erb (1.3ms)
+  Rendered scorecards/_par_heading.html.erb (0.0ms)
+  Rendered scorecards/edit.html.erb within layouts/admin (15.6ms)
+  Rendered scorecards/_list_of_scores.html.erb (7.0ms)
+  Rendered scorecards/edit.html.erb within layouts/admin (15.8ms)
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" ORDER BY "scorecards"."total" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "scorecards"[0m
+  Rendered scorecards/_list_of_scores.html.erb (21.7ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "scorecards"[0m
+  Rendered scorecards/index.html.erb within layouts/admin (103.0ms)
+  Rendered scorecards/index.html.erb within layouts/admin (132.9ms)
+Completed 200 OK in 270ms (Views: 242.0ms | ActiveRecord: 0.9ms)
+
+
+Completed 200 OK in 294ms (Views: 250.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/scorecards/1/edit" for 127.0.0.1 at 2017-08-19 18:01:24 -0500
+Processing by ScorecardsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 264ms (Views: 262.1ms | ActiveRecord: 0.6ms)
+
+
+  Rendering scorecards/edit.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.3ms)
+Completed 200 OK in 330ms (Views: 294.2ms | ActiveRecord: 0.5ms)
+
+
+  Rendered scorecards/_scores_input.html.erb (2.2ms)
+  Rendered scorecards/edit.html.erb within layouts/admin (11.4ms)
+Completed 200 OK in 336ms (Views: 284.3ms | ActiveRecord: 0.4ms)
+
+
+Completed 200 OK in 76ms (Views: 69.1ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/scorecards/1" for 127.0.0.1 at 2017-08-19 18:01:32 -0500
+Processing by ScorecardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4tgJpk7abNsqRaxEFa5lJIJ9+RoOOkWVCzOUai0Lp865SP7wVe2jxbbxp/zUz5Ash3DwfBP/DBnIIQtRSAvIxA==", "scorecard"=>{"player"=>"Tiger Woods", "hole_1"=>"4", "hole_2"=>"4", "hole_3"=>"4", "hole_4"=>"3", "hole_5"=>"4", "hole_6"=>"3", "hole_7"=>"4", "hole_8"=>"4", "hole_9"=>"3", "hole_10"=>"4", "hole_11"=>"4", "hole_12"=>"2", "hole_13"=>"4", "hole_14"=>"3", "hole_15"=>"4", "hole_16"=>"4", "hole_17"=>"3", "hole_18"=>"4"}, "commit"=>"Save Edit", "id"=>"1"}
+  [1m[36mScorecard Load (0.4ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Can't verify CSRF token authenticity.
+Unpermitted parameters: :utf8, :_method, :authenticity_token, :scorecard, :commit, :id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/scorecards/1
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/scorecards/1" for 127.0.0.1 at 2017-08-19 18:01:32 -0500
+Processing by ScorecardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering scorecards/show.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendered scorecards/_total.html.erb (1.7ms)
+  Rendered scorecards/_scores_output.html.erb (4.5ms)
+  Rendered scorecards/show.html.erb within layouts/admin (6.4ms)
+Completed 200 OK in 51ms (Views: 48.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/scorecards/1/edit" for 127.0.0.1 at 2017-08-19 18:05:04 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ScorecardsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering scorecards/edit.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.3ms)
+  Rendered scorecards/_scores_input.html.erb (5.1ms)
+  Rendered scorecards/edit.html.erb within layouts/admin (9.7ms)
+Completed 200 OK in 333ms (Views: 302.3ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/scorecards/1" for 127.0.0.1 at 2017-08-19 18:05:11 -0500
+Processing by ScorecardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ayZLPwESp6nSdB1sKylFc2PLTfzhykwW61lcokY3W50wtrxpGiVot07AFtTqSLB7ZsZEmvwPBZooS8OZIzc0lw==", "scorecard"=>{"player"=>"Tiger Woods", "hole_1"=>"4", "hole_2"=>"4", "hole_3"=>"4", "hole_4"=>"3", "hole_5"=>"4", "hole_6"=>"3", "hole_7"=>"4", "hole_8"=>"4", "hole_9"=>"3", "hole_10"=>"4", "hole_11"=>"4", "hole_12"=>"2", "hole_13"=>"4", "hole_14"=>"3", "hole_15"=>"4", "hole_16"=>"4", "hole_17"=>"3", "hole_18"=>"4"}, "commit"=>"Save Edit", "id"=>"1"}
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Can't verify CSRF token authenticity.
+Unpermitted parameters: :utf8, :_method, :authenticity_token, :scorecard, :commit, :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/scorecards/1
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/scorecards/1" for 127.0.0.1 at 2017-08-19 18:05:11 -0500
+Processing by ScorecardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScorecard Load (0.1ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Scorecard Load (0.0ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering scorecards/show.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.3ms)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendered scorecards/_total.html.erb (1.4ms)
+  Rendered scorecards/_scores_output.html.erb (4.2ms)
+  Rendered scorecards/show.html.erb within layouts/admin (6.4ms)
+Completed 200 OK in 48ms (Views: 45.8ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_scorecards_courses_on_scorecard_id_and_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_scorecards_courses_on_scorecard_id_and_course_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateScorecards (20170810164228)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "scorecards" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "player" varchar, "hole_1" integer, "hole_2" integer, "hole_3" integer, "hole_4" integer, "hole_5" integer, "hole_6" integer, "hole_7" integer, "hole_8" integer, "hole_9" integer, "hole_10" integer, "hole_11" integer, "hole_12" integer, "hole_13" integer, "hole_14" integer, "hole_15" integer, "hole_16" integer, "hole_17" integer, "hole_18" integer)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170810164228"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddTotalToScorcards (20170811193538)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "scorecards" ADD "total" integer[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170811193538"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCourses (20170812215447)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "par_1" integer, "par_2" integer, "par_3" integer, "par_4" integer, "par_5" integer, "par_6" integer, "par_7" integer, "par_8" integer, "par_9" integer, "par_10" integer, "par_11" integer, "par_12" integer, "par_13" integer, "par_14" integer, "par_15" integer, "par_16" integer, "par_17" integer, "par_18" integer, "total_par" integer, "yardage_1" integer, "yardage_2" integer, "yardage_3" integer, "yardage_4" integer, "yardage_5" integer, "yardage_6" integer, "yardage_7" integer, "yardage_8" integer, "yardage_9" integer, "yardage_10" integer, "yardage_11" integer, "yardage_12" integer, "yardage_13" integer, "yardage_14" integer, "yardage_15" integer, "yardage_16" integer, "yardage_17" integer, "yardage_18" integer, "total_yardage" integer)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170812215447"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddTeesToCourses (20170814155928)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "courses" ADD "tees" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170814155928"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateScorecardsCoursesJoin (20170816204545)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "scorecards_courses" ("scorecard_id" integer, "course_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_scorecards_courses_on_scorecard_id_and_course_id" ON "scorecards_courses" ("scorecard_id", "course_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170816204545"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePlayers (20170817223025)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "player_name" varchar, "status" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170817223025"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddProfilesToPlayers (20170818123515)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "players" ADD "profile" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "players" ADD "accomplishments" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170818123515"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddRoundsToScores (20170818235617)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "scorecards" ADD "round_one" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "scorecards" ADD "round_two" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "scorecards" ADD "round_three" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "scorecards" ADD "round_final" integer[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170818235617"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-08-19 23:06:33.885242"], ["updated_at", "2017-08-19 23:06:33.885242"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_scorecards_courses_on_scorecard_id_and_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_scorecards_courses_on_scorecard_id_and_course_id' AND type='index'
+[0m
+Started GET "/scorecards" for 127.0.0.1 at 2017-08-19 18:06:48 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ScorecardsController#index as HTML
+  Rendering scorecards/index.html.erb within layouts/admin
+  Rendered shared/_list_heading.html.erb (0.5ms)
+  Rendered scorecards/_par_heading.html.erb (0.2ms)
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" ORDER BY "scorecards"."total" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered scorecards/_list_of_scores.html.erb (2.8ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "scorecards"[0m
+  Rendered scorecards/index.html.erb within layouts/admin (9.1ms)
+Completed 200 OK in 361ms (Views: 347.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/scorecards/new" for 127.0.0.1 at 2017-08-19 18:06:51 -0500
+Processing by ScorecardsController#new as HTML
+  Rendering scorecards/new.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.3ms)
+  Rendered scorecards/_scores_input.html.erb (4.9ms)
+  Rendered scorecards/new.html.erb within layouts/admin (9.0ms)
+Completed 200 OK in 66ms (Views: 48.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/scorecards" for 127.0.0.1 at 2017-08-19 18:07:23 -0500
+Processing by ScorecardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kzlAool3Ea7UUIbHzNaX3tZvD5rbPv9GoXEx8cSJJojIqbf0kkDesEjkjX8Nt2LW02IG/Mb7tspiY67KoYlJgg==", "scorecard"=>{"player"=>"Tiger Woods", "hole_1"=>"4", "hole_2"=>"3", "hole_3"=>"4", "hole_4"=>"3", "hole_5"=>"3", "hole_6"=>"3", "hole_7"=>"4", "hole_8"=>"4", "hole_9"=>"4", "hole_10"=>"3", "hole_11"=>"4", "hole_12"=>"5", "hole_13"=>"4", "hole_14"=>"4", "hole_15"=>"3", "hole_16"=>"4", "hole_17"=>"3", "hole_18"=>"4"}, "commit"=>"Publish Card"}
+Unpermitted parameters: :utf8, :authenticity_token, :scorecard, :commit
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering scorecards/new.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.4ms)
+  Rendered scorecards/_scores_input.html.erb (1.8ms)
+  Rendered scorecards/new.html.erb within layouts/admin (5.0ms)
+Completed 200 OK in 55ms (Views: 48.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-08-19 18:07:27 -0500
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/admin
+  Rendered shared/_list_heading.html.erb (0.3ms)
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  Rendered courses/_list_of_courses.html.erb (3.2ms)
+  Rendered courses/index.html.erb within layouts/admin (6.5ms)
+Completed 200 OK in 51ms (Views: 45.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/scorecards" for 127.0.0.1 at 2017-08-19 18:07:43 -0500
+Processing by ScorecardsController#index as HTML
+  Rendering scorecards/index.html.erb within layouts/admin
+  Rendered shared/_list_heading.html.erb (0.4ms)
+  Rendered scorecards/_par_heading.html.erb (0.3ms)
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" ORDER BY "scorecards"."total" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered scorecards/_list_of_scores.html.erb (2.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "scorecards"[0m
+  Rendered scorecards/index.html.erb within layouts/admin (7.9ms)
+Completed 200 OK in 65ms (Views: 62.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2017-08-19 18:07:57 -0500
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/admin
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/admin (1.8ms)
+Completed 200 OK in 49ms (Views: 43.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/players/new" for 127.0.0.1 at 2017-08-19 18:08:00 -0500
+Processing by PlayersController#new as HTML
+  Rendering players/new.html.erb within layouts/admin
+  Rendered players/new.html.erb within layouts/admin (10.0ms)
+Completed 200 OK in 53ms (Views: 51.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/players" for 127.0.0.1 at 2017-08-19 18:08:27 -0500
+Processing by PlayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"COKupURAI4u1Ekyyz/huOj6QC/OJ9EvZFp1EsVM07PhVSHI6HAfHrwbNdf/Ni/IFza66A3faWMfDiRFindhNFA==", "player"=>{"player_name"=>"Tiger Woods", "profile"=>"Former no 1", "accomplishments"=>"14 majors", "status"=>"Retired PGA USA"}, "commit"=>"Create Player"}
+Unpermitted parameters: :utf8, :authenticity_token, :player, :commit
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "players" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-19 23:08:27.716852"], ["updated_at", "2017-08-19 23:08:27.716852"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/players
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2017-08-19 18:08:27 -0500
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/admin
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/admin (2.1ms)
+Completed 200 OK in 50ms (Views: 48.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/scorecards" for 127.0.0.1 at 2017-08-19 18:17:02 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ScorecardsController#index as HTML
+  Rendering scorecards/index.html.erb within layouts/admin
+  Rendered shared/_list_heading.html.erb (0.4ms)
+  Rendered scorecards/_par_heading.html.erb (0.3ms)
+  [1m[36mScorecard Load (0.3ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" ORDER BY "scorecards"."total" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered scorecards/_list_of_scores.html.erb (2.9ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "scorecards"[0m
+  Rendered scorecards/index.html.erb within layouts/admin (8.4ms)
+Completed 200 OK in 262ms (Views: 249.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/scorecards/new" for 127.0.0.1 at 2017-08-19 18:17:04 -0500
+Processing by ScorecardsController#new as HTML
+  Rendering scorecards/new.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.4ms)
+  Rendered scorecards/_scores_input.html.erb (5.9ms)
+  Rendered scorecards/new.html.erb within layouts/admin (10.0ms)
+Completed 200 OK in 96ms (Views: 59.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/scorecards" for 127.0.0.1 at 2017-08-19 18:17:19 -0500
+Processing by ScorecardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X02HH9hi/XRJ9U+Y7xh+5iRfSIdZw850NQAESKrPpJEE3XBJw1UyatVBRCAueYvuIVJB4UQGh/j2Eptzz8/Lmw==", "scorecard"=>{"player"=>"Jordan Spieth", "hole_1"=>"5", "hole_2"=>"4", "hole_3"=>"4", "hole_4"=>"3", "hole_5"=>"3", "hole_6"=>"3", "hole_7"=>"3", "hole_8"=>"3", "hole_9"=>"", "hole_10"=>"", "hole_11"=>"", "hole_12"=>"", "hole_13"=>"", "hole_14"=>"", "hole_15"=>"", "hole_16"=>"", "hole_17"=>"", "hole_18"=>""}, "commit"=>"Publish Card"}
+Unpermitted parameters: :utf8, :authenticity_token, :scorecard, :commit
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering scorecards/new.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.6ms)
+  Rendered scorecards/_scores_input.html.erb (2.4ms)
+  Rendered scorecards/new.html.erb within layouts/admin (6.5ms)
+Completed 200 OK in 74ms (Views: 62.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-08-19 18:17:23 -0500
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/admin
+  Rendered shared/_list_heading.html.erb (0.5ms)
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  Rendered courses/_list_of_courses.html.erb (3.7ms)
+  Rendered courses/index.html.erb within layouts/admin (7.2ms)
+Completed 200 OK in 54ms (Views: 48.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/courses/new" for 127.0.0.1 at 2017-08-19 18:22:40 -0500
+Processing by CoursesController#new as HTML
+  Rendering courses/new.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.4ms)
+  Rendered courses/_pars_input.html.erb (8.3ms)
+  Rendered courses/_yardage_input.html.erb (2.5ms)
+  Rendered courses/new.html.erb within layouts/admin (55.6ms)
+Completed 200 OK in 96ms (Views: 93.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/courses" for 127.0.0.1 at 2017-08-19 18:23:19 -0500
+Processing by CoursesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6EBfQF8WGQa2Q1cI8NRdUEVW2uPXxkRvp4Hw/VbWTkgwAGG2buCu8Uny8vHWvCiillbQSnlWo2JPEvswwohQ8A==", "course"=>{"name"=>"Spirit Creek Golf Club", "par_1"=>"4", "par_2"=>"4", "par_3"=>"3", "par_4"=>"4", "par_5"=>"5", "par_6"=>"3", "par_7"=>"3", "par_8"=>"5", "par_9"=>"4", "par_10"=>"4", "par_11"=>"4", "par_12"=>"3", "par_13"=>"5", "par_14"=>"3", "par_15"=>"4", "par_16"=>"4", "par_17"=>"5", "par_18"=>"4", "tees"=>"", "yardage_1"=>"", "yardage_2"=>"", "yardage_3"=>"", "yardage_4"=>"", "yardage_5"=>"", "yardage_6"=>"", "yardage_7"=>"", "yardage_8"=>"", "yardage_9"=>"", "yardage_10"=>"", "yardage_11"=>"", "yardage_12"=>"", "yardage_13"=>"", "yardage_14"=>"", "yardage_15"=>"", "yardage_16"=>"", "yardage_17"=>"", "yardage_18"=>""}, "commit"=>"Publish Numbers"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "courses" ("name", "par_1", "par_2", "par_3", "par_4", "par_5", "par_6", "par_7", "par_8", "par_9", "par_10", "par_11", "par_12", "par_13", "par_14", "par_15", "par_16", "par_17", "par_18", "tees") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Spirit Creek Golf Club"], ["par_1", 4], ["par_2", 4], ["par_3", 3], ["par_4", 4], ["par_5", 5], ["par_6", 3], ["par_7", 3], ["par_8", 5], ["par_9", 4], ["par_10", 4], ["par_11", 4], ["par_12", 3], ["par_13", 5], ["par_14", 3], ["par_15", 4], ["par_16", 4], ["par_17", 5], ["par_18", 4], ["tees", ""]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2017-08-19 18:23:19 -0500
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.3ms)
+  Rendered courses/_par_total.html.erb (1.0ms)
+  Rendered courses/_yardage_total.html.erb (0.9ms)
+  Rendered courses/_par_yard_output.html.erb (7.6ms)
+  Rendered courses/show.html.erb within layouts/admin (10.5ms)
+Completed 200 OK in 59ms (Views: 54.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-08-19 18:23:26 -0500
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/admin
+  Rendered shared/_list_heading.html.erb (0.5ms)
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  Rendered courses/_list_of_courses.html.erb (9.0ms)
+  Rendered courses/index.html.erb within layouts/admin (12.9ms)
+Completed 200 OK in 58ms (Views: 55.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/scorecards" for 127.0.0.1 at 2017-08-19 18:23:36 -0500
+Processing by ScorecardsController#index as HTML
+  Rendering scorecards/index.html.erb within layouts/admin
+  Rendered shared/_list_heading.html.erb (0.4ms)
+  Rendered scorecards/_par_heading.html.erb (0.3ms)
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" ORDER BY "scorecards"."total" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered scorecards/_list_of_scores.html.erb (3.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "scorecards"[0m
+  Rendered scorecards/index.html.erb within layouts/admin (8.8ms)
+Completed 200 OK in 59ms (Views: 52.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/scorecards/new" for 127.0.0.1 at 2017-08-19 18:23:38 -0500
+Processing by ScorecardsController#new as HTML
+  Rendering scorecards/new.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.4ms)
+  Rendered scorecards/_scores_input.html.erb (1.7ms)
+  Rendered scorecards/new.html.erb within layouts/admin (5.6ms)
+Completed 200 OK in 71ms (Views: 45.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/scorecards" for 127.0.0.1 at 2017-08-19 18:24:03 -0500
+Processing by ScorecardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4Q1baKbG0fros2bbtU2DWDM6epBpHj+hut4If+G3Zyi6naw+vfEe5HQHbWN0LHZQNjdz9nTbdi15zJdEhLcIIg==", "scorecard"=>{"player"=>"Tiger Woods", "hole_1"=>"4", "hole_2"=>"3", "hole_3"=>"4", "hole_4"=>"4", "hole_5"=>"4", "hole_6"=>"3", "hole_7"=>"3", "hole_8"=>"4", "hole_9"=>"4", "hole_10"=>"4", "hole_11"=>"5", "hole_12"=>"3", "hole_13"=>"3", "hole_14"=>"4", "hole_15"=>"3", "hole_16"=>"2", "hole_17"=>"4", "hole_18"=>"3"}, "commit"=>"Publish Card"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "scorecards" ("player", "hole_1", "hole_2", "hole_3", "hole_4", "hole_5", "hole_6", "hole_7", "hole_8", "hole_9", "hole_10", "hole_11", "hole_12", "hole_13", "hole_14", "hole_15", "hole_16", "hole_17", "hole_18") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["player", "Tiger Woods"], ["hole_1", 4], ["hole_2", 3], ["hole_3", 4], ["hole_4", 4], ["hole_5", 4], ["hole_6", 3], ["hole_7", 3], ["hole_8", 4], ["hole_9", 4], ["hole_10", 4], ["hole_11", 5], ["hole_12", 3], ["hole_13", 3], ["hole_14", 4], ["hole_15", 3], ["hole_16", 2], ["hole_17", 4], ["hole_18", 3]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/scorecards.1
+Completed 500 Internal Server Error in 129ms (ActiveRecord: 1.0ms)
+
+
+  
+NameError (undefined local variable or method `f' for #<ScorecardsController:0x007f918ac622d0>):
+  
+app/controllers/scorecards_controller.rb:31:in `create'
+Started POST "/scorecards" for 127.0.0.1 at 2017-08-19 18:24:38 -0500
+Processing by ScorecardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4Q1baKbG0fros2bbtU2DWDM6epBpHj+hut4If+G3Zyi6naw+vfEe5HQHbWN0LHZQNjdz9nTbdi15zJdEhLcIIg==", "scorecard"=>{"player"=>"Tiger Woods", "hole_1"=>"4", "hole_2"=>"3", "hole_3"=>"4", "hole_4"=>"4", "hole_5"=>"4", "hole_6"=>"3", "hole_7"=>"3", "hole_8"=>"4", "hole_9"=>"4", "hole_10"=>"4", "hole_11"=>"5", "hole_12"=>"3", "hole_13"=>"3", "hole_14"=>"4", "hole_15"=>"3", "hole_16"=>"2", "hole_17"=>"4", "hole_18"=>"3"}, "commit"=>"Publish Card"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "scorecards" ("player", "hole_1", "hole_2", "hole_3", "hole_4", "hole_5", "hole_6", "hole_7", "hole_8", "hole_9", "hole_10", "hole_11", "hole_12", "hole_13", "hole_14", "hole_15", "hole_16", "hole_17", "hole_18") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["player", "Tiger Woods"], ["hole_1", 4], ["hole_2", 3], ["hole_3", 4], ["hole_4", 4], ["hole_5", 4], ["hole_6", 3], ["hole_7", 3], ["hole_8", 4], ["hole_9", 4], ["hole_10", 4], ["hole_11", 5], ["hole_12", 3], ["hole_13", 3], ["hole_14", 4], ["hole_15", 3], ["hole_16", 2], ["hole_17", 4], ["hole_18", 3]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/scorecards.2
+Completed 302 Found in 44ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/scorecards.2" for 127.0.0.1 at 2017-08-19 18:24:38 -0500
+Processing by ScorecardsController#index as 
+  Rendering scorecards/index.html.erb within layouts/admin
+  Rendered shared/_list_heading.html.erb (0.9ms)
+  Rendered scorecards/_par_heading.html.erb (0.3ms)
+  [1m[36mScorecard Load (0.6ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" ORDER BY "scorecards"."total" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered scorecards/_list_of_scores.html.erb (3.7ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "scorecards"[0m
+  Rendered scorecards/index.html.erb within layouts/admin (41.1ms)
+Completed 200 OK in 127ms (Views: 114.4ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/scorecards/2" for 127.0.0.1 at 2017-08-19 18:24:48 -0500
+Processing by ScorecardsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9QGGGKJ4X9UA32kKkzdFhdg/iNyGcZnTD17QPgApS67LWQ7j31zGvGP0tltAMzlVFS470/Bk79hTd84IBDN+VA==", "id"=>"2"}
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" WHERE "scorecards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "scorecards" WHERE "scorecards"."id" = ?[0m  [["id", 2]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/scorecards
+Completed 302 Found in 6ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/scorecards" for 127.0.0.1 at 2017-08-19 18:24:48 -0500
+Processing by ScorecardsController#index as HTML
+  Rendering scorecards/index.html.erb within layouts/admin
+  Rendered shared/_list_heading.html.erb (0.4ms)
+  Rendered scorecards/_par_heading.html.erb (0.4ms)
+  [1m[36mScorecard Load (0.2ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" ORDER BY "scorecards"."total" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered scorecards/_list_of_scores.html.erb (2.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "scorecards"[0m
+  Rendered scorecards/index.html.erb within layouts/admin (7.4ms)
+Completed 200 OK in 56ms (Views: 53.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/scorecards/new" for 127.0.0.1 at 2017-08-19 18:24:59 -0500
+Processing by ScorecardsController#new as HTML
+  Rendering scorecards/new.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.4ms)
+  Rendered scorecards/_scores_input.html.erb (2.0ms)
+  Rendered scorecards/new.html.erb within layouts/admin (6.3ms)
+Completed 200 OK in 60ms (Views: 58.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/scorecards" for 127.0.0.1 at 2017-08-19 18:25:37 -0500
+Processing by ScorecardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sC3YxDKIViaCP5SVO/29udz1noMCTyrwa3D3iuhErgXrvS+SKb+ZOB6Lny36nEix2fiX5R+KY3yoYmixjUTBDw==", "scorecard"=>{"player"=>"Jordan Spieth", "hole_1"=>"4", "hole_2"=>"4", "hole_3"=>"4", "hole_4"=>"4", "hole_5"=>"3", "hole_6"=>"4", "hole_7"=>"4", "hole_8"=>"4", "hole_9"=>"2", "hole_10"=>"4", "hole_11"=>"3", "hole_12"=>"3", "hole_13"=>"4", "hole_14"=>"3", "hole_15"=>"3", "hole_16"=>"4", "hole_17"=>"4", "hole_18"=>"4"}, "commit"=>"Publish Card"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "scorecards" ("player", "hole_1", "hole_2", "hole_3", "hole_4", "hole_5", "hole_6", "hole_7", "hole_8", "hole_9", "hole_10", "hole_11", "hole_12", "hole_13", "hole_14", "hole_15", "hole_16", "hole_17", "hole_18") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["player", "Jordan Spieth"], ["hole_1", 4], ["hole_2", 4], ["hole_3", 4], ["hole_4", 4], ["hole_5", 3], ["hole_6", 4], ["hole_7", 4], ["hole_8", 4], ["hole_9", 2], ["hole_10", 4], ["hole_11", 3], ["hole_12", 3], ["hole_13", 4], ["hole_14", 3], ["hole_15", 3], ["hole_16", 4], ["hole_17", 4], ["hole_18", 4]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/scorecards.3
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/scorecards.3" for 127.0.0.1 at 2017-08-19 18:25:37 -0500
+Processing by ScorecardsController#index as 
+  Rendering scorecards/index.html.erb within layouts/admin
+  Rendered shared/_list_heading.html.erb (0.4ms)
+  Rendered scorecards/_par_heading.html.erb (0.3ms)
+  [1m[36mScorecard Load (0.3ms)[0m  [1m[34mSELECT  "scorecards".* FROM "scorecards" ORDER BY "scorecards"."total" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered scorecards/_list_of_scores.html.erb (2.7ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "scorecards"[0m
+  Rendered scorecards/index.html.erb within layouts/admin (38.9ms)
+Completed 200 OK in 104ms (Views: 89.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2017-08-19 18:25:42 -0500
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/admin
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/admin (8.0ms)
+Completed 200 OK in 65ms (Views: 58.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/players/new" for 127.0.0.1 at 2017-08-19 18:25:44 -0500
+Processing by PlayersController#new as HTML
+  Rendering players/new.html.erb within layouts/admin
+  Rendered players/new.html.erb within layouts/admin (4.0ms)
+Completed 200 OK in 49ms (Views: 46.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/players" for 127.0.0.1 at 2017-08-19 18:26:16 -0500
+Processing by PlayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/onzsodS0xakxPlzGiAIXlhYoQlGJkLbvQC73KkS2KKjIy8t3xU3MhcbwD4YU5Rhq2YQ+bgIUcVoFO4PZ/55Tg==", "player"=>{"player_name"=>"Tiger Woods", "profile"=>"Former no 1 player", "accomplishments"=>"Majors 14", "status"=>"Retired PGA USA"}, "commit"=>"Create Player"}
+Unpermitted parameters: :player_name, :profile, :accomplishments, :status
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "players" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-19 23:26:16.816895"], ["updated_at", "2017-08-19 23:26:16.816895"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/players
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2017-08-19 18:26:16 -0500
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/admin
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/admin (1.4ms)
+Completed 200 OK in 49ms (Views: 47.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/players/1/edit" for 127.0.0.1 at 2017-08-19 18:27:34 -0500
+Processing by PlayersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering players/edit.html.erb within layouts/admin
+  Rendered players/edit.html.erb within layouts/admin (3.4ms)
+Completed 200 OK in 66ms (Views: 48.9ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/players/1" for 127.0.0.1 at 2017-08-19 18:27:37 -0500
+Processing by PlayersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NfXow3ZsDLRo6mgX4m3KVVkPL7Bg+8N+BxbwLbXcQo3Vn266YP6PADy1I0YO8A0XKm4C9YrZbuJ0p7mBGMz7GQ==", "player"=>{"player_name"=>"", "profile"=>"", "accomplishments"=>"", "status"=>""}, "commit"=>"Update Player", "id"=>"1"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "players" SET "player_name" = ?, "status" = ?, "profile" = ?, "accomplishments" = ?, "updated_at" = ? WHERE "players"."id" = ?[0m  [["player_name", ""], ["status", ""], ["profile", ""], ["accomplishments", ""], ["updated_at", "2017-08-19 23:27:37.978605"], ["id", 1]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/players/1
+Completed 302 Found in 6ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/players/1" for 127.0.0.1 at 2017-08-19 18:27:37 -0500
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering players/show.html.erb within layouts/admin
+  Rendered players/show.html.erb within layouts/admin (1.6ms)
+Completed 200 OK in 47ms (Views: 45.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2017-08-19 18:27:40 -0500
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/admin
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/admin (2.1ms)
+Completed 200 OK in 53ms (Views: 50.9ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/players/1" for 127.0.0.1 at 2017-08-19 18:27:44 -0500
+Processing by PlayersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kKzL0lgj+Kk3bnSKTph8uhZx6aZQLw0pk7jFc/OJ7J2u9EMpJQdhwFRFq9udnABq22BaqSY6eyLPkdtF95PZZw==", "id"=>"1"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "players" WHERE "players"."id" = ?[0m  [["id", 1]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/players
+Completed 302 Found in 6ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2017-08-19 18:27:44 -0500
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/admin
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/admin (1.6ms)
+Completed 200 OK in 46ms (Views: 43.9ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/players/2" for 127.0.0.1 at 2017-08-19 18:27:47 -0500
+Processing by PlayersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sGNBUfBq9nh1anmitRpkK/BKk8PC8qJwIj2lUtPy01COO8mqjU5vERZBpvNmHhj7PVsgzLTn1Ht+FLtk1+jmqg==", "id"=>"2"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "players" WHERE "players"."id" = ?[0m  [["id", 2]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/players
+Completed 302 Found in 6ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2017-08-19 18:27:47 -0500
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/admin
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/admin (1.1ms)
+Completed 200 OK in 57ms (Views: 55.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/players/new" for 127.0.0.1 at 2017-08-19 18:27:49 -0500
+Processing by PlayersController#new as HTML
+  Rendering players/new.html.erb within layouts/admin
+  Rendered players/new.html.erb within layouts/admin (2.9ms)
+Completed 200 OK in 47ms (Views: 45.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/players" for 127.0.0.1 at 2017-08-19 18:28:32 -0500
+Processing by PlayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NxvGaqp87gaiKJF/J1yx6MJ4o+QoLhJSBjn5jTOWRJRqsRr18jsKIhH3qDIlLy3XMUYSFNYAAUzTLaxe/XrleA==", "player"=>{"player_name"=>"Tiger Woods", "profile"=>"Former no. 1 player", "accomplishments"=>"Wins 106 . Majors 14", "status"=>"Retired PGA USA"}, "commit"=>"Create Player"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "players" ("player_name", "status", "created_at", "updated_at", "profile", "accomplishments") VALUES (?, ?, ?, ?, ?, ?)[0m  [["player_name", "Tiger Woods"], ["status", "Retired PGA USA"], ["created_at", "2017-08-19 23:28:32.073782"], ["updated_at", "2017-08-19 23:28:32.073782"], ["profile", "Former no. 1 player"], ["accomplishments", "Wins 106 . Majors 14"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/players
+Completed 302 Found in 3ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2017-08-19 18:28:32 -0500
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/admin
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/admin (1.4ms)
+Completed 200 OK in 49ms (Views: 47.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-08-19 18:58:56 -0500
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/admin
+  Rendered shared/_list_heading.html.erb (0.5ms)
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  Rendered courses/_list_of_courses.html.erb (33.8ms)
+  Rendered courses/index.html.erb within layouts/admin (37.4ms)
+Completed 200 OK in 89ms (Views: 83.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/courses/1/edit" for 127.0.0.1 at 2017-08-19 18:59:02 -0500
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/edit.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.4ms)
+  Rendered courses/_pars_input.html.erb (2.3ms)
+  Rendered courses/_yardage_input.html.erb (2.3ms)
+  Rendered courses/edit.html.erb within layouts/admin (10.8ms)
+Completed 200 OK in 60ms (Views: 56.5ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/courses/1" for 127.0.0.1 at 2017-08-19 19:01:06 -0500
+Processing by CoursesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BLEEX5uMLAuCxdXOdGybNUPwLUqIBxaR+EawDwE9DQDc8Tqpqnqb/H10cDdSBO7HkPAn4yaX8ZwQ1bvClWMTuA==", "course"=>{"name"=>"Spirit Creek Golf Club", "par_1"=>"4", "par_2"=>"4", "par_3"=>"3", "par_4"=>"4", "par_5"=>"5", "par_6"=>"3", "par_7"=>"3", "par_8"=>"5", "par_9"=>"4", "par_10"=>"4", "par_11"=>"4", "par_12"=>"3", "par_13"=>"5", "par_14"=>"3", "par_15"=>"4", "par_16"=>"4", "par_17"=>"5", "par_18"=>"4", "tees"=>"", "yardage_1"=>"464", "yardage_2"=>"342", "yardage_3"=>"213", "yardage_4"=>"468", "yardage_5"=>"574", "yardage_6"=>"248", "yardage_7"=>"145", "yardage_8"=>"610", "yardage_9"=>"443", "yardage_10"=>"480", "yardage_11"=>"389", "yardage_12"=>"230", "yardage_13"=>"525", "yardage_14"=>"190", "yardage_15"=>"410", "yardage_16"=>"455", "yardage_17"=>"560", "yardage_18"=>"490"}, "commit"=>"Save Edit", "id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "courses" SET "yardage_1" = ?, "yardage_2" = ?, "yardage_3" = ?, "yardage_4" = ?, "yardage_5" = ?, "yardage_6" = ?, "yardage_7" = ?, "yardage_8" = ?, "yardage_9" = ?, "yardage_10" = ?, "yardage_11" = ?, "yardage_12" = ?, "yardage_13" = ?, "yardage_14" = ?, "yardage_15" = ?, "yardage_16" = ?, "yardage_17" = ?, "yardage_18" = ? WHERE "courses"."id" = ?[0m  [["yardage_1", 464], ["yardage_2", 342], ["yardage_3", 213], ["yardage_4", 468], ["yardage_5", 574], ["yardage_6", 248], ["yardage_7", 145], ["yardage_8", 610], ["yardage_9", 443], ["yardage_10", 480], ["yardage_11", 389], ["yardage_12", 230], ["yardage_13", 525], ["yardage_14", 190], ["yardage_15", 410], ["yardage_16", 455], ["yardage_17", 560], ["yardage_18", 490], ["id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1
+Completed 302 Found in 7ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2017-08-19 19:01:06 -0500
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/admin
+  Rendered scorecards/_hole_number_headings.html.erb (0.5ms)
+  Rendered courses/_par_total.html.erb (0.7ms)
+  Rendered courses/_yardage_total.html.erb (0.5ms)
+  Rendered courses/_par_yard_output.html.erb (6.5ms)
+  Rendered courses/show.html.erb within layouts/admin (8.3ms)
+Completed 200 OK in 54ms (Views: 51.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-08-19 19:01:08 -0500
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/admin
+  Rendered shared/_list_heading.html.erb (0.5ms)
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  Rendered courses/_list_of_courses.html.erb (2.8ms)
+  Rendered courses/index.html.erb within layouts/admin (6.8ms)
+Completed 200 OK in 55ms (Views: 52.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2017-08-19 19:01:14 -0500
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/admin
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/admin (2.2ms)
+Completed 200 OK in 52ms (Views: 50.5ms | ActiveRecord: 0.2ms)
+
+

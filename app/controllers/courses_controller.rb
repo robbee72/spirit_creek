@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
   
   protect_from_forgery
-  skip_before_action :verify_authenticity_token, only: [:destroy]
+#  skip_before_action :verify_authenticity_token, only: [:edit, :new, :destroy]
  
     layout 'admin'
   
